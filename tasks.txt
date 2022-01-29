@@ -1,0 +1,6 @@
+tasks list:
+
+-add filters in search bar
+-improves menu toggle 
+-profile page
+-orders section
