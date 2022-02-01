@@ -71,12 +71,13 @@ class ProfileController extends Controller
     }
 
     public function imageUpload(Request $request){
+
       $id = Auth::user()->id;
       $user = User::findOrFail($id);
 
       if($request->hasFile('profile_image')){  
-          $img_path = $request->file('profile_image')->store('public/images');
-          $user->image = $img_path;
+          $data = $request->file('profile_image')->store('public/images');
+          $user->image = $data;
           $user->update();
       } 
       

@@ -1,34 +1,29 @@
 "use strict";
 
-const btn_name = document.querySelector(".edit-item-btn-name");
-const btn_email = document.querySelector(".edit-item-btn-email");
-const btn_password = document.querySelector(".edit-item-btn-password");
-const btn_address = document.querySelector(".edit-item-btn-address");
-const btn_city = document.querySelector(".edit-item-btn-city");
-const btn_phone = document.querySelector(".edit-item-btn-phone");
+// Live image uploading
+const current_img = document.getElementById("preview-img").src;
+const input_file = document.getElementById("upload-photo");
+const input_file_btn = document.getElementById("upload-photo-btn");
+const confirm_btn = document.getElementById("confirm-photo-btn");
+const cancel_btn = document.getElementById("cancel-photo-btn");
 
-const container_name = document.querySelector(".edit-container-name");
-const container_email = document.querySelector(".edit-container-email");
-const container_password = document.querySelector(".edit-container-password");
-const container_address = document.querySelector(".edit-container-address");
-const container_city = document.querySelector(".edit-container-city");
-const container_phone = document.querySelector(".edit-container-phone");
+input_file_btn.addEventListener('change',function(e){
+    if(e.target.files.length > 0){
+        var src = URL.createObjectURL(e.target.files[0]);
+        var preview = document.getElementById("preview-img");
+        preview.src = src;
+        input_file_btn.style.display = 'none';
+        confirm_btn.style.display = 'block';
+        cancel_btn.style.display = 'block';
+        console.log(e.target.files);
+    }
+});
 
-btn_name.addEventListener("click", function () {
-    container_name.classList.toggle("hidden");
-});
-btn_email.addEventListener("click", function () {
-    container_email.classList.toggle("hidden");
-});
-btn_password.addEventListener("click", function () {
-    container_password.classList.toggle("hidden");
-});
-btn_address.addEventListener("click", function () {
-    container_address.classList.toggle("hidden");
-});
-btn_phone.addEventListener("click", function () {
-    container_phone.classList.toggle("hidden");
-});
-btn_city.addEventListener("click", function () {
-    container_city.classList.toggle("hidden");
+cancel_btn.addEventListener('click',function(e){
+    e.preventDefault();
+    var preview = document.getElementById("preview-img");
+    confirm_btn.style.display = 'none';
+    cancel_btn.style.display = 'none';
+    input_file_btn.style.display = 'block';
+    preview.src = current_img;
 });
