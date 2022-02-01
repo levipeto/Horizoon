@@ -114,7 +114,6 @@
             <div class="mt-4">
               <ul class="max-w-2xl">
 
-
                  {{-- Image --}}
                  <li class="flex p-4 border-b">
                   <form class="flex w-full adaptable:block" action="{{route('account.update.image')}}" method="POST" enctype="multipart/form-data">
@@ -131,17 +130,17 @@
                         {{ $first_letter}}
                         </button>
                       @else
-                        <img class="profile-image-btn rounded-full adaptable:mx-auto adaptable:h-20 adaptable:w-20 w-36 h-36 justify-center items-center overflow-hidden object-cover cursor-pointer" id="preview-img" src="{{ Storage::url(Auth::user()->image) }}">
+                        <img class="profile-image-btn rounded-full adaptable:mx-auto adaptable:h-24 adaptable:w-24 w-36 h-36 justify-center items-center overflow-hidden object-cover cursor-pointer" id="preview-img" src="{{ Storage::url(Auth::user()->image) }}">
                       @endif
                     </div>
-                    <div class="block space-y-2 pl-4 adaptable:mt-4">
+                    <div class="block space-y-2 pl-4  adaptable:mt-4">
                         <div class="text-base font-semibold text-gray-800">Upload your photo</div>
                         <div class="text-sm font-semibold text-gray-600">let the world know who you are through an image</div>
                         <div class="flex space-x-2 w-full ml-auto adaptable:pr-6 adaptable:w-40"> 
                         {{-- Input file --}}
-                        <label for="upload-photo" id="upload-photo-btn" class="cursor-pointer">
+                        <label for="upload-photo" id="upload-photo-btn" class="cursor-pointer w-full">
                           <input type="file" class="hidden" name="profile_image" id="upload-photo"> 
-                          <div class="px-1 py-1 adaptable:w-full w-44 mobile:w-full bg-yellow-300 hover:bg-yellow-400 text-gray-900 rounded-sm font-semibold text-base shadow-md text-center">Choose photo</div>
+                          <div class="px-1 py-1 adaptable:w-full adaptable:left-0 w-44 mobile:w-full bg-yellow-300 hover:bg-yellow-400 text-gray-900 rounded-sm font-semibold text-base shadow-md text-center">Choose photo</div>
                         </label>
                         {{-- Btn --}}
                          <div class="flex gap-2">
@@ -157,17 +156,17 @@
 
                 {{-- Name --}}
                 <li class="flex p-4 border-b">
-                 <form class="flex w-full" action="{{route('account.update.data')}}" method="POST">
+                 <form class="flex adaptable:block w-full" action="{{route('account.update.data')}}" method="POST">
                   @csrf
                   @method('PATCH')
                   <div class="block space-y-2 gap-1">
                      <label class="text-base font-semibold text-gray-800" for="fullname">Name</label>
                      <div>
-                        <input class="text-gray-600 w-60 text-base outline-none border rounded-sm p-0.5 focus:border-blue-300" 
+                        <input class="text-gray-600 w-60 adaptable:w-full adaptable:p-1 text-base outline-none border rounded-sm p-1 focus:border-blue-300" 
                         name="fullname" value="{{Auth::user()->fullname}}">
                      </div>
                   </div>
-                  <div class="ml-auto pt-6 adaptable:pr-6 adaptable:w-40">
+                  <div class="ml-auto adaptable:ml-0 adaptable:w-full pt-6 adaptable:pr-6">
                   <button type="submit" class="px-1 py-1 adaptable:w-full w-44 mobile:w-full bg-yellow-300 hover:bg-yellow-400 text-gray-900 rounded-sm font-semibold text-base shadow-md">Edit</button>
                   </div>
                  </form>
@@ -175,17 +174,17 @@
 
                 {{-- Email --}}
                 <li class="flex p-4 border-b">
-                  <form class="flex w-full" action="{{route('account.update.data')}}" method="POST">
+                  <form class="flex adaptable:block w-full" action="{{route('account.update.data')}}" method="POST">
                     @csrf
                     @method('PATCH')
                   <div class="block space-y-2 gap-1">
                      <label class="text-base font-semibold text-gray-800" for="email">Email</label>
                      <div>
-                      <input class="text-gray-600 text-base w-60 outline-none border rounded-sm p-0.5 focus:border-blue-300" 
+                      <input class="text-gray-600 text-base w-60 adaptable:w-full adaptable:p-1 outline-none border rounded-sm p-1 focus:border-blue-300" 
                       name="email" value="{{Auth::user()->email}}">
                      </div>
                   </div>
-                 <div class="ml-auto pt-6 adaptable:pr-6 adaptable:w-40">
+                 <div class="ml-auto adaptable:ml-0 pt-6 adaptable:pr-6 adaptable:w-full">
                   <button class="px-1 py-1 adaptable:w-full w-44 mobile:w-full bg-yellow-300 hover:bg-yellow-400 text-gray-900 rounded-sm font-semibold text-base shadow-md">Edit</button>
                  </div>
                   </form>
@@ -193,17 +192,17 @@
 
                 {{-- Address --}}
                 <li class="flex p-4 border-b">
-                  <form class="flex w-full" action="{{route('account.update.data')}}" method="POST">
+                  <form class="flex adaptable:block w-full" action="{{route('account.update.data')}}" method="POST">
                     @csrf
                     @method('PATCH')
                   <div class="block space-y-2 gap-1">
                      <label class="text-base font-semibold text-gray-800" for="address">Address</label>
                      <div>
-                      <input class="text-gray-600 text-base w-60 outline-none border rounded-sm p-0.5 focus:border-blue-300" 
+                      <input class="text-gray-600 text-base w-60 adaptable:w-full adaptable:p-1 outline-none border rounded-sm p-1 focus:border-blue-300" 
                       name="address" value="{{Auth::user()->address}}">
                      </div>
                   </div>
-                 <div class="ml-auto pt-6 adaptable:pr-6 adaptable:w-40">
+                 <div class="ml-auto pt-6 adaptable:ml-0 adaptable:w-full adaptable:pr-6">
                   <button class="px-1 py-1 adaptable:w-full w-44 mobile:w-full bg-yellow-300 hover:bg-yellow-400 text-gray-900 rounded-sm font-semibold text-base shadow-md">Edit</button>
                  </div>
                   </form>
@@ -211,17 +210,17 @@
 
                 {{-- City --}}
                 <li class="flex p-4 border-b">
-                  <form class="flex w-full" action="{{route('account.update.data')}}" method="POST">
+                  <form class="flex adaptable:block w-full" action="{{route('account.update.data')}}" method="POST">
                     @csrf
                     @method('PATCH')
                   <div class="block space-y-2 gap-1">
                      <label class="text-base font-semibold text-gray-800" for="city">City</label>
                      <div class="text-gray-600 text-base">
-                      <input class="text-gray-600 text-base w-60 outline-none border rounded-sm p-0.5 focus:border-blue-300" 
+                      <input class="text-gray-600 text-base w-60 adaptable:w-full adaptable:p-1 outline-none border rounded-sm p-1 focus:border-blue-300" 
                       name="city" value="{{Auth::user()->city}}">
                      </div>
                   </div>
-                 <div class="ml-auto pt-6 adaptable:pr-6 adaptable:w-40">
+                 <div class="ml-auto pt-6 adaptable:pr-6 adaptable:ml-0 adaptable:w-full">
                   <button class="px-1 py-1 adaptable:w-full w-44 mobile:w-full bg-yellow-300 hover:bg-yellow-400 text-gray-900 rounded-sm font-semibold text-base shadow-md">Edit</button>
                  </div>
                   </form>
@@ -229,17 +228,17 @@
 
                 {{-- Phone --}}
                 <li class="flex p-4 border-b">
-                  <form class="flex w-full" action="{{route('account.update.data')}}" method="POST">
+                  <form class="flex adaptable:block w-full" action="{{route('account.update.data')}}" method="POST">
                     @csrf
                     @method('PATCH')
                   <div class="block space-y-2 gap-1">
                      <label class="text-base font-semibold text-gray-800" for="phone">Phone</label>
                      <div class="text-gray-600 text-base">
-                      <input class="text-gray-600 text-base w-60 outline-none border rounded-sm p-0.5 focus:border-blue-300" 
+                      <input class="text-gray-600 text-base w-60 adaptable:w-full adaptable:p-1 outline-none border rounded-sm p-1 focus:border-blue-300" 
                       name="phone" value="{{Auth::user()->phone}}">
                      </div>
                   </div>
-                 <div class="ml-auto pt-6 adaptable:pr-6 adaptable:w-40">
+                 <div class="ml-auto pt-6 adaptable:pr-6 adaptable:ml-0 adaptable:w-full">
                   <button class="px-1 py-1 adaptable:w-full w-44 mobile:w-full bg-yellow-300 hover:bg-yellow-400 text-gray-900 rounded-sm font-semibold text-base shadow-md">Edit</button>
                  </div>
                   </form>
@@ -253,11 +252,11 @@
                   <div class="block space-y-2 gap-1">
                      <label class="text-base font-semibold text-gray-800" for="phone">Password</label>
                      <div class="space-y-4 gap-2">
-                      <input class="text-gray-600 text-base w-60 outline-none border rounded-sm p-0.5 focus:border-blue-300" 
+                      <input class="text-gray-600 text-base w-60 adaptable:w-full adaptable:p-1 outline-none border rounded-sm p-1 focus:border-blue-300" 
                       type="password" name="current_password" autocomplete required placeholder="Current Password...">
-                      <input class="text-gray-600 text-base w-60 outline-none border rounded-sm p-0.5 focus:border-blue-300" 
+                      <input class="text-gray-600 text-base w-60 adaptable:w-full adaptable:p-1 outline-none border rounded-sm p-1 focus:border-blue-300" 
                       type="password" name="password" required placeholder="New Password...">
-                      <input class="text-gray-600 text-base w-60 outline-none border rounded-sm p-0.5 focus:border-blue-300" 
+                      <input class="text-gray-600 text-base w-60 adaptable:w-full adaptable:p-1 outline-none border rounded-sm p-1 focus:border-blue-300" 
                       type="password" name="confirm_password" required placeholder="Repeat Password...">
                       <div>
                         <a href="{{route('password.request')}}" class="font-medium text-indigo-600 hover:text-indigo-500">

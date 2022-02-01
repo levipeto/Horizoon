@@ -373,7 +373,7 @@ transform -translate-x-full transition duration-500 ease-in-out" style="width: 3
      <li class="text-gray-900 text-xl font-bold p-2">
         Categories
      </li>
-     <li class="text-gray-800 font-semibold text-base hover:bg-gray-200 p-2">
+     <li class="text-gray-800 font-semibold text-base hover:bg-gray-200 p-2 cursor-pointer">
        <a href="{{ route('categories', 'smartphone') }}">Smartphone</a>
      </li>
      <li class="text-gray-800 font-semibold text-base hover:bg-gray-200 p-2">
@@ -463,7 +463,7 @@ transform -translate-x-full transition duration-500 ease-in-out" style="width: 3
  
 {{-- Vertical bar mobile --}}
 <div class="vertical-nav-overlay-mobile hidden h-full w-full fixed z-10 left-0 right-0 bottom-0 overflow-auto" style="background-color:rgba(0,0,0,0.5);"></div>
-<div class="vertical-nav-items-mobile shadow-2xl left-0 inset-y-0 absolute top-0 z-10 bg-gray-50 h-screen w-2/3 overflow-y-scroll 
+<div class="vertical-nav-items-mobile shadow-2xl left-0 inset-y-0 absolute top-0 z-10 bg-gray-50 h-screen w-3/4 overflow-y-scroll 
   transform -translate-x-full transition duration-500 ease-in-out">
   <div class="bg-gray-900 p-2">
     <div class="flex">
