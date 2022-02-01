@@ -35,11 +35,12 @@ class ProductsController extends Controller
         $reviews = Review::where('product',$product->name)->get();
 
          // Get all favourite product in the list
-         $favourites = Auth::user()->favourites;
          $fav_liste = [];
- 
+         if(Auth::check() == true){
+         $favourites = Auth::user()->favourites;
          foreach ($favourites as $is_favourite) {
              array_push($fav_liste,$is_favourite->name);
+          }
          }
 
         return view('showproduct',compact('product','reviews','images','fav_liste'));
