@@ -262,13 +262,31 @@
      </div>
 
     {{-- Menu --}}
-    <div class="pl-2 pt-1 justify-center items-center ml-auto pr-8">
+    <div class="pl-2 pt-1 w-auto justify-center items-center ml-auto pr-8">
       <div class="vertical-nav-btn-mobile font-bold text-3xl text-gray-200">
+        @auth
+       <div class="w-8 h-8 rounded-full">
+        @if(Auth::user()->image == null)
+        <button class="flex-1 rounded-full w-8 h-8 bg-yellow-400 justify-center items-center
+        text-gray-800 font-semibold text-2xl">
+         @php
+        $username = Auth::user()->fullname;
+        $first_letter = substr($username, 0, 1);
+        @endphp
+        {{ $first_letter}}
+        </button>
+        @else
+            <img class="rounded-full w-8 h-8 justify-center items-center overflow-hidden object-cover" src="{{ Storage::url(Auth::user()->image) }}">
+        @endif
+       </div>
+        @endauth
+        @guest
         <button class="h-full justify-center items-center">
           <svg xmlns="http://www.w3.org/2000/svg" class="menu-mobile h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
+        @endguest
       </div>
 
 
@@ -449,9 +467,23 @@ transform -translate-x-full transition duration-500 ease-in-out" style="width: 3
   transform -translate-x-full transition duration-500 ease-in-out">
   <div class="bg-gray-900 p-2">
     <div class="flex">
-     <div class="text-gray-100 font-bold text-base p-1 mt-1.5 pl-2">
+     <div class="flex gap-2 text-gray-100 font-bold text-sm p-1 mt-1.5 pl-2 overflow-hidden">
        @auth
-        Hello, {{Auth::user()->fullname}}
+       <div class="w-6 h-6 rounded-full">
+        @if(Auth::user()->image == null)
+        <button class="flex-1 rounded-full w-8 h-8 bg-yellow-400 justify-center items-center
+        text-gray-800 font-semibold text-2xl">
+         @php
+        $username = Auth::user()->fullname;
+        $first_letter = substr($username, 0, 1);
+        @endphp
+        {{ $first_letter}}
+        </button>
+        @else
+            <img class="rounded-full w-6 h-6 justify-center items-center overflow-hidden object-cover" src="{{ Storage::url(Auth::user()->image) }}">
+        @endif
+       </div>
+        <div class="pl-4">Hello, {{Auth::user()->fullname}}</div>
        @endauth
        @guest
         Hello, sign in

@@ -40,6 +40,7 @@ class HomeController extends Controller
          }
         }
 
+
         return view('home',compact('products','best_offer_product','fav_liste'));
     }
 
