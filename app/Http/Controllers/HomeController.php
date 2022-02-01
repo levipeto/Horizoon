@@ -25,7 +25,7 @@ class HomeController extends Controller
     public function index()
     {
         // Get products from db (only if they have 4 or more stars and are not on offeronly if they have 4 or more stars and are not on offer)
-        $products = Product::where('review_average','>=',4)->where('sale',false)->get();
+        $products = Product::where('average_review','>=',4)->where('sale',false)->get();
         // Get best product on sale
         $best_offer_product = Product::where('sale',true)->first();
 

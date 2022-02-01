@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-@include('layouts.head')
-<style>
-</style>
+<link href="{{ asset('css/app.css') }}" rel="stylesheet">
 <body>
 
     <div class="flex items-center justify-center w-screen h-screen bg-gradient-to-t from-indigo-500 to-indigo-600">
