@@ -12,12 +12,12 @@ use Illuminate\Validation\Validator;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use Intervention\Image\Facades\Image as Image;
 
 class ProductsController extends Controller
 {
 
-    
-    
+
     /**
      * Show all products
      *
@@ -66,7 +66,6 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-
         $data = $request->all();
         $this->Validation($request);
 
@@ -82,8 +81,16 @@ class ProductsController extends Controller
             $images = [];
             foreach($request->file('product-image') as $file)
             {
-                $image_path = $file->store('public/images');
-                array_push($images,$image_path);
+                $destination_path = 'public/images';
+                $img_name = time().'.'.$file->getClientOriginalName();
+                $path = $file->storeAs($destination_path,$img_name);
+
+                $img = Image::make($file);
+                $img->resize(500,500,function($constraint){
+                    $constraint->aspectRatio();
+                })->save($destination_path.'/'.$img_name);
+
+                array_push($images,$path);
             }
         }
 
@@ -122,8 +129,17 @@ class ProductsController extends Controller
         if($request->hasfile('product-image')) {
             foreach($request->file('product-image') as $file)
             {
-                $image_path = $file->store('public/images');
-                array_push($images,$image_path);
+
+                $destination_path = 'public/images';
+                $img_name = time().'.'.$file->getClientOriginalName();
+                $path = $file->storeAs($destination_path,$img_name);
+
+                $img = Image::make($file);
+                $img->resize(500,500,function($constraint){
+                    $constraint->aspectRatio();
+                })->save($destination_path.'/'.$img_name);
+                
+                array_push($images,$path);
             }
         }
 

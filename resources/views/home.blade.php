@@ -60,21 +60,21 @@
           mx-auto mt-2 overflow-hidden box-border">
           @foreach ($products as $product)
               {{-- Products --}}
-              <div class="product-container mobile:h-auto p-2 adaptable:w-full 
+              <div class="product-container mobile:h-auto p-2 adaptable:w-full h-auto
               mobile:border mobile:border-gray-200 border border-gray-200
               overflow-hidden cursor-pointer adaptable:shadow-none mobile:shadow-none
-              rounded-sm " style="height: 580px">
+              rounded-sm ">
                         
                <div class="float-left absolute cursor-pointer">
                   <form action="{{ route('store.fav', $product->id) }}" method="POST">
                     @csrf
                     <button class="favourites-btn">
                       @if (in_array($product->name,$fav_liste) == false)
-                      <svg xmlns="http://www.w3.org/2000/svg" class="fav-symbol h-8 w-8 text-gray-400 hover:text-red-500" viewBox="0 0 20 20" fill="currentColor">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="fav-symbol h-8 w-8 adaptable:w-6 adaptable:h-6 text-gray-400 hover:text-red-500" viewBox="0 0 20 20" fill="currentColor">
                         <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" />
                       </svg> 
                       @else
-                      <svg xmlns="http://www.w3.org/2000/svg" class="fav-symbol h-8 w-8 text-red-500 hover:text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="fav-symbol h-8 w-8 adaptable:w-6 adaptable:h-6 text-red-500 hover:text-gray-400" viewBox="0 0 20 20" fill="currentColor">
                         <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" />
                       </svg> 
                       @endif
@@ -92,9 +92,9 @@
                @endphp
                
               {{-- Main images --}}
-              <div class="flex pt-1 overflow-hidden" style="width: 100%; height: 350px;">
+              <div class="flex pt-1 w-40 h-40 adaptable:w-28 adaptable:h-28 mx-auto overflow-hidden">
                 <input type="hidden" name="image" value="{{$images[0]}}">
-                <img class="product-image object-cover align-items-center block m-auto" src="{{ Storage::url($images[0]) }}">
+                <img class="product-image object-cover object-center block m-auto" src="{{ Storage::url($images[0]) }}">
               </div>
 
                {{-- Details --}}
@@ -111,7 +111,7 @@
                      pl-12 adaptable:pl-0 adaptable:mt-2 mobile:hidden">
                      @for ($i = 0; $i < 5; $i++)
                       @php
-                      $cheked = $product->review_average <= $i ? 'text-gray-300' : 'text-yellow-400';
+                      $cheked = $product->average_review <= $i ? 'text-gray-300' : 'text-yellow-400';
                       echo "
                       <svg class='$cheked h-5 w-5 flex-shrink-0' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='currentColor' aria-hidden='true'>
                         <path d='M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z' />
@@ -205,8 +205,6 @@
         </div>
 
       </div>
-    
-
 
       @include('layouts.footer')
           

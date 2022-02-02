@@ -56,6 +56,7 @@
                 <option value="accessories">accessories</option>
                 <option value="computers">computer</option>
                 <option value="tv">tv</option>
+                <option value="videogames">videogames</option>
               </select>
             </dd>
           </div>
