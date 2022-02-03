@@ -278,9 +278,10 @@
             </div>
           </div>
 
+          {{-- Profile image viewer --}}
           <div class="profile-image-container w-full h-screen hidden">
            <div class="h-full w-full overlay fixed z-10 left-0 right-0 bottom-0 overflow-auto" style="background-color:rgba(0, 0, 0, 0.644);">
-            <div class="max-w-6xl adaptable:max-w-2xl bottom-0 z-10 mx-auto mt-8 overflow-hidden">
+            <div class="max-w-6xl adaptable:w-80 adaptable:h-80 adaptable:mt-52 adaptable:rounded-sm bottom-0 z-10 mx-auto mt-8 overflow-hidden">
               <img class="w-full h-full object-cover" src="{{ Storage::url(Auth::user()->image) }}">
             </div>
            </div>

@@ -11,7 +11,7 @@
     <div class="text-2xl font-bold text-yellow-500 pl-6"><span class="text-gray-600">{{Auth::user()->fullname}}</span>
      Favourites list <span>({{$favourites->count()}})</span></div>
    @foreach ($favourites as $favourite)
-        <div class="flex space-x-2 border-b adaptable:block border-gray-300 pt-4 p-4">
+        <div class="flex space-x-2 border-b adaptable:block border-gray-300 pt-4 p-6">
                {{-- Images --}}
                @php
                $images = json_decode($favourite->image,true);
@@ -38,7 +38,7 @@
                 @for ($i = 0; $i < 5; $i++)
                  @php
                  $product = DB::table('products')->where('name',$favourite->name)->first();
-                 $cheked = $product->review_average <= $i ? 'text-gray-300' : 'text-yellow-400';
+                 $cheked = $product->average_review <= $i ? 'text-gray-300' : 'text-yellow-400';
                  echo "
                  <svg class='$cheked h-5 w-5 flex-shrink-0' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='currentColor' aria-hidden='true'>
                    <path d='M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z' />
@@ -70,10 +70,10 @@
         </div>
    @endforeach
      @if (Auth::user()->favourites->count() > 0)
-      <div class="pl-12 p-2">
+      <div class="pl-8 adaptable:pl-10 p-2">
          <form action="{{ route('clear.fav') }}" method="POST">
          @csrf
-         <button class="inline-block w-60 mt-4 text-center bg-red-500 border border-transparent 
+         <button class="inline-block w-72 mt-4 text-center bg-red-500 border border-transparent 
          rounded-md py-2 px-1 text-base font-semibold text-white hover:opacity-90">Clear list</button>
          </form>
       </div>

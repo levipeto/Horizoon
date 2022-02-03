@@ -524,10 +524,12 @@ transform -translate-x-full transition duration-500 ease-in-out" style="width: 3
        Services
      </li>
      <li class="text-gray-700 font-semibold text-base hover:bg-gray-200 p-2">
-     <a href="">Gift card</a>
+      <a href="{{ route('show.fav')}}">
+        Favourites
+      </a>
      </li>
      <li class="text-gray-700 font-semibold text-base hover:bg-gray-200 p-2">
-       <a href="#">
+       <a href="{{ route('order')}}">
          Last order
        </a>
      </li>
@@ -556,7 +558,7 @@ transform -translate-x-full transition duration-500 ease-in-out" style="width: 3
      <a href="{{route('profile')}}">Profile</a>
      @endauth
      @guest
-     <a href="">Login</a>
+     <a href="{{route('login')}}">Login</a>
      @endguest
      </li>
       @auth
