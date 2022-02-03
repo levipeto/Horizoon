@@ -54,7 +54,7 @@
 
         <div class="font-semibold text-gray-800 text-xl pl-6 border-b border-gray-200 p-4
         z-10">Trending products</div>
-         <div class="w-full grid grid-cols-4 adaptable:grid-cols-2 adaptable:gap-4
+         <div class="w-full grid grid-cols-4 adaptable:grid-cols-3 adaptable:gap-4
           mobile:grid-cols-2 gap-2
           adaptable:p-2 grid-flow-row adaptable:max-w-xl
           mx-auto mt-2 overflow-hidden box-border">
@@ -144,50 +144,45 @@
           </div>
 
         {{-- Product in offer --}}
-        <div class="relative max-w-6xl adaptable:w-full mx-auto mt-12 bg-blue-100 overflow-hidden p-4">
-           <div class="w-full flex space-x-2 adaptable:w-full adaptable:block adaptable:space-x-0">
-              <div class="flex w-1/2 mt-4 p-4 adaptable:max-w-2xl adaptable:mx-auto
+        <div class="relative 2xl:max-w-6xl xl:max-w-6xl lg:max-w-6xl md:max-w-3xl sm:max-w-3xl mobile:max-w-full  mx-auto mt-12 bg-blue-100 overflow-hidden p-4">
+          <div class="w-full flex space-x-2 mobile:w-full mobile:block mobile:space-x-0">
+            <div class="flex w-1/2 mt-4 mobile:mt-0 p-4 mobile:max-w-2xl mobile:mx-auto
               mobile:w-full">
-                <div class="block">
+              <div class="block">
 
-                  @php
-                  $images = json_decode($best_offer_product->image,true);
-                  @endphp
+                @php
+                $images = json_decode($best_offer_product->image,true);
+                @endphp
 
-                                    
-                  <div class="mx-auto 2xl:hidden xl:hidden md:hidden">
-                    <img class="bg-cover bg-center" src="{{ Storage::url($images[0]) }}" alt="">
+                <div class="mt-2">
+
+                  <div class="font-bold text-gray-800 text-3xl">
+                    {{$best_offer_product->name}}
                   </div>
-
-                  <div class="mt-2 mobile:pt-6">
-
-                    <div class="font-bold text-gray-800 text-3xl adaptable:text-4xl">
-                      {{$best_offer_product->name}}
-                    </div>
-                    <div class="mt-2 text-base adaptable:text-xl font-semibold text-gray-700">
-                      {{-- {{$best_offer_product->name}} --}}
-                      Our thinnest, lightest notebook, completely transformed by the Apple M1 chip. 
-                      CPU speeds up to 3.5x faster. GPU speeds up to 5x faster. 
-                    </div>
-                    <div class="pt-2">
-                      <form action="{{ route('product.show',  $best_offer_product->name)}}" method="GET">
-                        <button class="p-2 w-44 mobile:w-full bg-blue-700 text-white rounded-sm font-semibold text-base shadow-2xl">Look offer</button>
-                      </form>
-                    </div>
+                  <div class="mt-2 text-base font-semibold text-gray-700"> 
+                    {{-- {{$best_offer_product->name}} --}}
+                    Our thinnest, lightest notebook, completely transformed by the Apple M1 chip. 
+                    CPU speeds up to 3.5x faster. GPU speeds up to 5x faster. 
                   </div>
-
+                  <div class="pt-2">
+                    <form action="{{ route('product.show',  $best_offer_product->name)}}" method="GET">
+                      <button class="p-2 w-44 mobile:w-full bg-blue-700 text-white rounded-sm font-semibold text-base shadow-2xl">Look offer</button>
+                    </form>
+                  </div>
                 </div>
-              </div>
 
-              <div class="float-right mobile:hidden adaptable:hidden">
-                <img class="bg-cover bg-center" src="{{ Storage::url($images[0]) }}" alt="">
               </div>
-              
-           </div>
+            </div>
+
+            <div class="mr-auto adaptable:mt-6">
+              <img class="object-cover object-center" src="{{ Storage::url($images[0]) }}" alt="">
+            </div>
+
+          </div>
         </div>
 
         {{-- Sponsor sections --}}
-        <div class="max-w-6xl adaptable:w-full mx-auto mt-12 overflow-hidden">
+        <div class="max-w-6xl adaptable:w-full adaptable:pb-48 mx-auto mt-12 overflow-hidden">
           <div class="flex mobile:block">
                 <div class="flex border border-gray-300 rounded-sm w-72 h-28 mobile:w-full justify-center items-center">
                   <img src="{{ asset('images/brands/samsung-logo.png') }}" width="100" height="100">
