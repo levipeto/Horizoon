@@ -74,7 +74,6 @@
         <h3 class="sr-only">Reviews</h3>
         <div class="flex items-center">
           <div class="flex items-center">
-            
             @for ($i = 0; $i < 5; $i++)
             @php
             $cheked = $product->average_review <= $i ? 'text-gray-300' : 'text-yellow-400';
@@ -89,7 +88,7 @@
           <p class="sr-only">4 out of 5 stars</p>
           <a href="#" class="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500">{{$reviews->count()}} reviews</a>
         </div>
-      </div>
+  </div>
          @if ($product->stock_qnt > 0)
         {{-- Checkout btn --}}
          <button type="submit" class="mt-10 w-full bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Add to bag</button>
@@ -162,9 +161,9 @@
       <button class="show-reviews-btn text-base font-semibold text-indigo-500 w-full border border-indigo-500 rounded-sm px-2 py-2">
       Show reviews ({{$reviews->count()}})</button>
       @else 
-      <div class="show-reviews-btn text-md font-semibold text-gray-800">
+      <button class="show-reviews-btn text-md font-semibold text-gray-800 cursor-text" disabled>
       there is no review to show (0)
-      </div>
+      </button>
       @endif
 
 

@@ -53,7 +53,7 @@ class ReviewController extends Controller
             $calc = array_sum($average)/((count($average)));
             $average_review = floor($calc);
             // Update product average
-            DB::table('products')->where('name',$request['product-name'])->update(array('review_average' => $average_review));
+            DB::table('products')->where('name',$request['product-name'])->update(array('average_review' => $average_review));
             return redirect()->back();
         }else{
             return Redirect::back()->withErrors(['review-error' => 'You must buy the product before make the review']);
