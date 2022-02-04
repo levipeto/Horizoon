@@ -27,10 +27,10 @@
 
 <div class="flex w-full h-screen overflow-hidden adaptable:p-4">
 
-<div class="flex w-1/2 h-screen adaptable:w-full adaptable:block p-2 items-center justify-center overflow-y-scroll">
+<div class="flex w-1/2 h-screen adaptable:w-full adaptable:h-auto adaptable:block p-2 items-center justify-center overflow-y-scroll">
     <div class="max-w-md w-full space-y-8">
-      <div>
-        <h2 class="pt-24 text-center text-3xl font-extrabold text-gray-800">
+      <div class="pt-24 adaptable:pt-2">
+        <h2 class=" text-center text-3xl font-extrabold text-gray-800">
           Create new account
         </h2>
       </div>
@@ -98,7 +98,7 @@
             <label class="text-gray-800 text-base font-semibold pl-0.5" for="birthdate">Birthdate</label>
             <input id="birthdate" name="birthdate" type="date" autocomplete="birthdate" required class=" @error('birthdate') is-invalid @enderror
             mt-1 appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none
-             focus:ring-indigo-800 focus:border-indigo-800 focus:z-10 sm:text-sm" placeholder="Birth date">
+             focus:ring-indigo-800 focus:border-indigo-800 focus:z-10 sm:text-sm" placeholder="DD/MM/YYYY">
              @error('birthdate')
              <div class="p-1 border border-red-500 rounded-b-sm text-base font-semibold text-red-500 text-center overflow-hidden" role="alert">
               <strong>{{ $message }}!</strong>

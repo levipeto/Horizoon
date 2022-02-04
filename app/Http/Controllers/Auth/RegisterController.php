@@ -58,7 +58,7 @@ class RegisterController extends Controller
             'birthdate' => ['required'],
             'phone' => ['required','regex:/[0-9]{9}/'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
+        ], );
     }
 
     /**

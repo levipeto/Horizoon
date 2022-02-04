@@ -90,12 +90,18 @@
                @php
                    $images = json_decode($product->image,true);
                @endphp
-               
-              {{-- Main images --}}
+
+              @if (count($images) > 0)                  {{-- Main images --}}
               <div class="flex pt-1 w-40 h-40 adaptable:w-28 adaptable:h-28 mx-auto overflow-hidden">
                 <input type="hidden" name="image" value="{{$images[0]}}">
-                <img class="product-image object-cover object-center block m-auto" src="{{ Storage::url($images[0]) }}">
+                <img class="product-image object-cover object-center block m-auto" src="{{ Storage::url($images[0]) }}" alt="img no present">
               </div>
+              @else
+              <div class="flex pt-1 w-40 h-40 adaptable:w-28 adaptable:h-28 mx-auto overflow-hidden">
+                <img class="product-image object-cover object-center block m-auto" src="" alt="img no present">
+              </div>
+              @endif
+               
 
                {{-- Details --}}
                <div class="px-6 py-4 mobile:text-base">

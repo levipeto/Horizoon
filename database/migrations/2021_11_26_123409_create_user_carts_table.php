@@ -17,6 +17,7 @@ class CreateUserCartsTable extends Migration
             $table->id();
             $table->string('name');
             $table->double('price');
+            $table->longText('image')->nullable();
             $table->integer('quantity');
             $table->foreignId('user_id');
             $table->timestamps();

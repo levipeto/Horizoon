@@ -32,15 +32,23 @@
                    <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" />
                  </svg>
              </div>
+
+
              {{-- Images --}}
              @php
                  $images = json_decode($product->image,true);
              @endphp
-             
+
+             @if (count($images) > 0)
             <div>
               <input type="hidden" name="image" value="{{$images[0]}}">
               <img class="product-image object-center" src="{{ Storage::url($images[0]) }}" width="200" height="200">
             </div>
+            @else
+            <div>
+              <img class="product-image object-center" alt="img no present" width="200" height="200">
+            </div>
+            @endif
 
              {{-- Details --}}
              <div class="px-6 py-4 mobile:text-base">

@@ -126,12 +126,18 @@
                           <tr>
                             <td class="px-6 py-4 whitespace-nowrap">
                               <div class="flex items-center">
+                                @php
+                                $images = json_decode($product->image,true);
+                                @endphp
+                                @if (count($images) > 0)    
                                 <div class="flex-shrink-0 w-16 h-16">
-                                  @php
-                                  $images = json_decode($product->image,true);
-                                  @endphp
                                   <img class="product-image bottom-0 w-full h-full" src="{{ Storage::url($images[0]) }}">
                                 </div>
+                                @else
+                                <div class="flex-shrink-0 w-16 h-16">
+                                  <img class="product-image bottom-0 w-full h-full" alt="img no present">
+                                </div>
+                                @endif
                                 <div class="ml-4">
                                   <div class="text-sm font-medium text-gray-900">
                                   </div>

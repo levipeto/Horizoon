@@ -11,16 +11,23 @@
 
   <form action="{{ route('store_product', $product->name)}}" method="POST">
    @csrf
-   <input type="hidden" name="image" value="{{$images[0]}}">
         
    <!-- Image gallery -->
    <div class="images-container mt-6 w-full mx-auto sm:px-6 lg:max-w-7xl lg:px-8 overflow-hidden">
     <div class="adaptable:block flex w-full mobile:block overflow-hidden ">
+    {{-- Main photo--}}
+    @if (count($images) > 0) 
+    <input type="hidden" name="image" value="{{$images[0]}}">  
     <div>
-      {{-- Main photo--}}
        <img src="{{ Storage::url($images[0])}}" class="main-image adaptable:w-full adaptable:h-full adaptable:mx-auto object-center object-cover"
        width="350" height="350">
     </div>
+    @else
+     <div>
+      <img class="main-image adaptable:w-full adaptable:h-full adaptable:mx-auto object-center object-cover" alt="img no present"
+      width="350" height="350">
+     </div>
+     @endif
      <div class="block">
        {{-- Others photos --}}
        <div class="w-full pl-6 pt-4 flex gap-2 adaptable:mt-4 mobile:mt-4 overflow-hidden">

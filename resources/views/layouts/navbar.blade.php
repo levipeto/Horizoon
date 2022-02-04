@@ -500,22 +500,22 @@ transform -translate-x-full transition duration-300 ease-in-out" style="width: 3
      <li class="text-gray-900 text-xl font-bold p-2">
         Categories
      </li>
-     <li class="text-gray-700 font-semibold text-lg hover:bg-gray-200 p-2">
+     <li class="text-gray-600 font-semibold text-lg hover:bg-gray-200 p-2">
        <a href="{{ route('categories', 'smartphone') }}">Smartphone</a>
      </li>
-     <li class="text-gray-700 font-semibold text-lg hover:bg-gray-200 p-2">
+     <li class="text-gray-600 font-semibold text-lg hover:bg-gray-200 p-2">
        <a href="{{ route('categories', 'videogames') }}">Video games</a>
      </li>
-     <li class="text-gray-700 font-semibold text-lg hover:bg-gray-200 p-2">
+     <li class="text-gray-600 font-semibold text-lg hover:bg-gray-200 p-2">
        <a href="{{ route('categories', 'computers') }}">Computers</a>
      </li>
-     <li class="text-gray-700 font-semibold text-lg hover:bg-gray-200 p-2">
+     <li class="text-gray-600 font-semibold text-lg hover:bg-gray-200 p-2">
        <a href="{{ route('categories', 'accessories') }}">Accessories</a>
      </li>
-     <li class="text-gray-700 font-semibold text-lg hover:bg-gray-200 p-2">
+     <li class="text-gray-600 font-semibold text-lg hover:bg-gray-200 p-2">
        <a href="{{ route('categories', 'tv') }}">Tv</a>
      </li>
-     <li class="text-gray-700 font-semibold text-lg hover:bg-gray-200 p-2">
+     <li class="text-gray-600 font-semibold text-lg hover:bg-gray-200 p-2">
        <a href="{{ route('categories', 'headphones') }}">HeadPhones</a>
      </li>
      <hr>
@@ -523,17 +523,17 @@ transform -translate-x-full transition duration-300 ease-in-out" style="width: 3
      <li class="text-gray-900 text-xl font-bold p-2">
        Services
      </li>
-     <li class="text-gray-700 font-semibold text-lg hover:bg-gray-200 p-2">
+     <li class="text-gray-600 font-semibold text-lg hover:bg-gray-200 p-2">
       <a href="{{ route('show.fav')}}">
         Favourites
       </a>
      </li>
-     <li class="text-gray-700 font-semibold text-lg hover:bg-gray-200 p-2">
+     <li class="text-gray-600 font-semibold text-lg hover:bg-gray-200 p-2">
        <a href="{{ route('order')}}">
          Last order
        </a>
      </li>
-     <li class="text-gray-700 font-semibold text-lg hover:bg-gray-200 p-2">
+     <li class="text-gray-600 font-semibold text-lg hover:bg-gray-200 p-2">
        <a href="#">
          @auth
          Deliver to {{Auth::user()->address}}
@@ -543,7 +543,7 @@ transform -translate-x-full transition duration-300 ease-in-out" style="width: 3
          @endguest
        </a>
      </li>
-     <li class="text-gray-700 font-semibold text-lg hover:bg-gray-200 p-2">
+     <li class="text-gray-600 font-semibold text-lg hover:bg-gray-200 p-2">
        <a href="#">
        Support
        </a>
@@ -553,7 +553,7 @@ transform -translate-x-full transition duration-300 ease-in-out" style="width: 3
      <li class="text-gray-900 text-xl font-bold p-2">
        Account
      </li>
-     <li class="text-gray-700 font-semibold text-lg hover:bg-gray-200 p-2">
+     <li class="text-gray-600 font-semibold text-lg hover:bg-gray-200 p-2">
      @auth
      <a href="{{route('profile')}}">Profile</a>
      @endauth
@@ -565,13 +565,13 @@ transform -translate-x-full transition duration-300 ease-in-out" style="width: 3
       <li class="hover:bg-gray-200 p-2">
         <form action="{{ route('logout') }}" method="POST">
           @csrf
-          <button class="text-gray-700 font-semibold text-lg  ">
+          <button class="text-gray-600 font-semibold text-lg  ">
           Sign out
           </button>
         </form>
      </li>
       @endauth
-     <li class="text-gray-700 font-semibold text-lg hover:bg-gray-200 p-2">
+     <li class="text-gray-600 font-semibold text-lg hover:bg-gray-200 p-2">
        <a href="#">
          @auth
          Deliver to {{Auth::user()->address}}
@@ -581,7 +581,7 @@ transform -translate-x-full transition duration-300 ease-in-out" style="width: 3
          @endguest
        </a>
      </li>
-     <li class="text-gray-700 font-semibold text-lg hover:bg-gray-200 p-2">
+     <li class="text-gray-600 font-semibold text-lg hover:bg-gray-200 p-2">
        <a href="#">
        Support
        </a>
