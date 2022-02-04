@@ -337,7 +337,7 @@
 {{-- Vertical bar dekstop --}}
 <div class="vertical-nav-overlay hidden h-full w-full fixed z-10 left-0 right-0 bottom-0 overflow-auto" style="background-color:rgba(0,0,0,0.5);"></div>
 <div class="vertical-nav-items shadow-2xl left-0 inset-y-0 absolute top-0 z-10 bg-gray-50 h-screen overflow-y-scroll 
-transform -translate-x-full transition duration-500 ease-in-out" style="width: 380px">
+transform -translate-x-full transition duration-300 ease-in-out" style="width: 380px">
   <div class="bg-gray-900 top-0 p-2">
     <div class="flex">
      <div class="text-gray-100 font-bold text-xl p-1 pl-2">
@@ -463,11 +463,11 @@ transform -translate-x-full transition duration-500 ease-in-out" style="width: 3
  
 {{-- Vertical bar mobile --}}
 <div class="vertical-nav-overlay-mobile hidden h-full w-full fixed z-10 left-0 right-0 bottom-0 overflow-auto" style="background-color:rgba(0,0,0,0.5);"></div>
-<div class="vertical-nav-items-mobile shadow-2xl left-0 inset-y-0 absolute top-0 z-10 bg-gray-50 h-screen w-3/4 overflow-y-scroll 
-  transform -translate-x-full transition duration-500 ease-in-out">
-  <div class="bg-gray-900 p-2">
+<div class="vertical-nav-items-mobile shadow-2xl left-0 inset-y-0 absolute top-0 z-10 bg-gray-50 h-screen w-3/4 mobile:w-full overflow-y-scroll 
+  transform -translate-x-full transition duration-300 ease-in-out">
+  <div class="bg-gray-900 p-2 overflow-hidden">
     <div class="flex">
-     <div class="flex gap-2 text-gray-100 font-bold text-sm p-1 mt-1.5 pl-2 overflow-hidden">
+     <div class="flex gap-2 text-gray-100 font-bold text-sm  mt-1.5 pl-2  p-1 overflow-hidden">
        @auth
        <div class="w-6 h-6 rounded-full">
         @if(Auth::user()->image == null)
@@ -483,7 +483,7 @@ transform -translate-x-full transition duration-500 ease-in-out" style="width: 3
             <img class="rounded-full w-6 h-6 justify-center items-center overflow-hidden object-cover" src="{{ Storage::url(Auth::user()->image) }}">
         @endif
        </div>
-        <div class="pl-4">Hello, {{Auth::user()->fullname}}</div>
+        <div class="pl-4 text-gray-50 font-semibold text-base">Hello, {{Auth::user()->fullname}}</div>
        @endauth
        @guest
         Hello, sign in
@@ -500,22 +500,22 @@ transform -translate-x-full transition duration-500 ease-in-out" style="width: 3
      <li class="text-gray-900 text-xl font-bold p-2">
         Categories
      </li>
-     <li class="text-gray-700 font-semibold text-base hover:bg-gray-200 p-2">
+     <li class="text-gray-700 font-semibold text-lg hover:bg-gray-200 p-2">
        <a href="{{ route('categories', 'smartphone') }}">Smartphone</a>
      </li>
-     <li class="text-gray-700 font-semibold text-base hover:bg-gray-200 p-2">
+     <li class="text-gray-700 font-semibold text-lg hover:bg-gray-200 p-2">
        <a href="{{ route('categories', 'videogames') }}">Video games</a>
      </li>
-     <li class="text-gray-700 font-semibold text-base hover:bg-gray-200 p-2">
+     <li class="text-gray-700 font-semibold text-lg hover:bg-gray-200 p-2">
        <a href="{{ route('categories', 'computers') }}">Computers</a>
      </li>
-     <li class="text-gray-700 font-semibold text-base hover:bg-gray-200 p-2">
+     <li class="text-gray-700 font-semibold text-lg hover:bg-gray-200 p-2">
        <a href="{{ route('categories', 'accessories') }}">Accessories</a>
      </li>
-     <li class="text-gray-700 font-semibold text-base hover:bg-gray-200 p-2">
+     <li class="text-gray-700 font-semibold text-lg hover:bg-gray-200 p-2">
        <a href="{{ route('categories', 'tv') }}">Tv</a>
      </li>
-     <li class="text-gray-700 font-semibold text-base hover:bg-gray-200 p-2">
+     <li class="text-gray-700 font-semibold text-lg hover:bg-gray-200 p-2">
        <a href="{{ route('categories', 'headphones') }}">HeadPhones</a>
      </li>
      <hr>
@@ -523,17 +523,17 @@ transform -translate-x-full transition duration-500 ease-in-out" style="width: 3
      <li class="text-gray-900 text-xl font-bold p-2">
        Services
      </li>
-     <li class="text-gray-700 font-semibold text-base hover:bg-gray-200 p-2">
+     <li class="text-gray-700 font-semibold text-lg hover:bg-gray-200 p-2">
       <a href="{{ route('show.fav')}}">
         Favourites
       </a>
      </li>
-     <li class="text-gray-700 font-semibold text-base hover:bg-gray-200 p-2">
+     <li class="text-gray-700 font-semibold text-lg hover:bg-gray-200 p-2">
        <a href="{{ route('order')}}">
          Last order
        </a>
      </li>
-     <li class="text-gray-700 font-semibold text-base hover:bg-gray-200 p-2">
+     <li class="text-gray-700 font-semibold text-lg hover:bg-gray-200 p-2">
        <a href="#">
          @auth
          Deliver to {{Auth::user()->address}}
@@ -543,7 +543,7 @@ transform -translate-x-full transition duration-500 ease-in-out" style="width: 3
          @endguest
        </a>
      </li>
-     <li class="text-gray-700 font-semibold text-base hover:bg-gray-200 p-2">
+     <li class="text-gray-700 font-semibold text-lg hover:bg-gray-200 p-2">
        <a href="#">
        Support
        </a>
@@ -553,7 +553,7 @@ transform -translate-x-full transition duration-500 ease-in-out" style="width: 3
      <li class="text-gray-900 text-xl font-bold p-2">
        Account
      </li>
-     <li class="text-gray-700 font-semibold text-base hover:bg-gray-200 p-2">
+     <li class="text-gray-700 font-semibold text-lg hover:bg-gray-200 p-2">
      @auth
      <a href="{{route('profile')}}">Profile</a>
      @endauth
@@ -565,13 +565,13 @@ transform -translate-x-full transition duration-500 ease-in-out" style="width: 3
       <li class="hover:bg-gray-200 p-2">
         <form action="{{ route('logout') }}" method="POST">
           @csrf
-          <button class="text-gray-700 font-semibold text-base  ">
+          <button class="text-gray-700 font-semibold text-lg  ">
           Sign out
           </button>
         </form>
      </li>
       @endauth
-     <li class="text-gray-700 font-semibold text-base hover:bg-gray-200 p-2">
+     <li class="text-gray-700 font-semibold text-lg hover:bg-gray-200 p-2">
        <a href="#">
          @auth
          Deliver to {{Auth::user()->address}}
@@ -581,7 +581,7 @@ transform -translate-x-full transition duration-500 ease-in-out" style="width: 3
          @endguest
        </a>
      </li>
-     <li class="text-gray-700 font-semibold text-base hover:bg-gray-200 p-2">
+     <li class="text-gray-700 font-semibold text-lg hover:bg-gray-200 p-2">
        <a href="#">
        Support
        </a>
