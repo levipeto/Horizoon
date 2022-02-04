@@ -1,15 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 {{-- Head --}}
-@include('layouts.head')
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- CSRF Token -->
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+  
+  <title>{{config("app.name")}} | registration</title>
+
+  <!-- Fonts -->
+  <link rel="dns-prefetch" href="//fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
+  <!-- Styles -->
+  <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+  body{
+    margin: 0;
+    height: 100%;
+  }
+</style>
 <body>
 
-<div class="flex w-full h-full overflow-hidden">
+<div class="flex w-full h-screen overflow-hidden adaptable:p-4">
 
-<div class="flex w-1/2 h-screen adaptable:w-full adaptable:block min-h-full p-2 items-center justify-center overflow-y-scroll">
+<div class="flex w-1/2 h-screen adaptable:w-full adaptable:block p-2 items-center justify-center overflow-y-scroll">
     <div class="max-w-md w-full space-y-8">
       <div>
-        <h2 class="mt-2 text-center text-3xl font-extrabold text-gray-800">
+        <h2 class="pt-24 text-center text-3xl font-extrabold text-gray-800">
           Create new account
         </h2>
       </div>
@@ -23,9 +44,9 @@
             appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none
              focus:ring-indigo-800 focus:border-indigo-800 focus:z-10 sm:text-sm" placeholder="Full name">
              @error('fullname')
-             <span class="invalid-feedback" role="alert">
-                  <strong>{{ $message }}</strong>
-             </span>
+             <div class="p-1 border border-red-500 rounded-b-sm text-base font-semibold text-red-500 text-center overflow-hidden" role="alert">
+                  <strong>{{ $message }}!</strong>
+             </div>
              @enderror
           </div>
 
@@ -34,9 +55,9 @@
             appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none
              focus:ring-indigo-800 focus:border-indigo-800 focus:z-10 sm:text-sm" placeholder="Email">
              @error('email')
-             <span class="invalid-feedback" role="alert">
-                  <strong>{{ $message }}</strong>
-             </span>
+             <div class="p-1 border border-red-500 rounded-b-sm text-base font-semibold text-red-500 text-center overflow-hidden" role="alert">
+              <strong>{{ $message }}!</strong>
+             </div>
              @enderror
           </div>
 
@@ -45,9 +66,9 @@
             appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none
              focus:ring-indigo-800 focus:border-indigo-800 focus:z-10 sm:text-sm" placeholder="address">
              @error('address')
-             <span class="invalid-feedback" role="alert">
-                  <strong>{{ $message }}</strong>
-             </span>
+             <div class="p-1 border border-red-500 rounded-b-sm text-base font-semibold text-red-500 text-center overflow-hidden" role="alert">
+              <strong>{{ $message }}!</strong>
+             </div>
              @enderror
           </div>
 
@@ -56,9 +77,9 @@
             appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none
              focus:ring-indigo-800 focus:border-indigo-800 focus:z-10 sm:text-sm" placeholder="City">
              @error('city')
-             <span class="invalid-feedback" role="alert">
-                  <strong>{{ $message }}</strong>
-             </span>
+             <div class="p-1 border border-red-500 rounded-b-sm text-base font-semibold text-red-500 text-center overflow-hidden" role="alert">
+              <strong>{{ $message }}!</strong>
+             </div>
              @enderror
           </div>
 
@@ -67,20 +88,21 @@
             appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none
              focus:ring-indigo-800 focus:border-indigo-800 focus:z-10 sm:text-sm" placeholder="Phone">
              @error('phone')
-             <span class="invalid-feedback" role="alert">
-                  <strong>{{ $message }}</strong>
-             </span>
+             <div class="p-1 border border-red-500 rounded-b-sm text-base font-semibold text-red-500 text-center overflow-hidden" role="alert">
+              <strong>{{ $message }}!</strong>
+             </div>
              @enderror
           </div>
 
-          <div class="mt-4">
+          <div class="mt-4 block">
+            <label class="text-gray-800 text-base font-semibold pl-0.5" for="birthdate">Birthdate</label>
             <input id="birthdate" name="birthdate" type="date" autocomplete="birthdate" required class=" @error('birthdate') is-invalid @enderror
-            appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none
+            mt-1 appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none
              focus:ring-indigo-800 focus:border-indigo-800 focus:z-10 sm:text-sm" placeholder="Birth date">
              @error('birthdate')
-             <span class="invalid-feedback" role="alert">
-                  <strong>{{ $message }}</strong>
-             </span>
+             <div class="p-1 border border-red-500 rounded-b-sm text-base font-semibold text-red-500 text-center overflow-hidden" role="alert">
+              <strong>{{ $message }}!</strong>
+             </div>
              @enderror
           </div>
 
@@ -89,9 +111,9 @@
             appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none
              focus:ring-indigo-800 focus:border-indigo-800 focus:z-10 sm:text-sm" name="password" required autocomplete="new-password" placeholder="Password">
              @error('password')
-             <span class="invalid-feedback" role="alert">
-                  <strong>{{ $message }}</strong>
-             </span>
+             <div class="p-1 border border-red-500 rounded-b-sm text-base font-semibold text-red-500 text-center overflow-hidden" role="alert">
+              <strong>{{ $message }}!</strong>
+             </div>
              @enderror
           </div>
 
@@ -100,9 +122,9 @@
             appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none
              focus:ring-indigo-800 focus:border-indigo-800 focus:z-10 sm:text-sm" name="password_confirmation" required autocomplete="new-password" placeholder="Password confirm">
              @error('password-confirm')
-             <span class="invalid-feedback" role="alert">
-                  <strong>{{ $message }}</strong>
-             </span>
+             <div class="p-1 border border-red-500 rounded-b-sm text-base font-semibold text-red-500 text-center overflow-hidden" role="alert">
+              <strong>{{ $message }}!</strong>
+             </div>
              @enderror
           </div>
           
@@ -110,18 +132,12 @@
   
         
         <div class="flex items-center justify-between">
-          <div class="flex items-center">
-                <input id="remember-me" name="remember-me" type="checkbox" class="h-4 w-4 text-yellow-600 focus:ring-yellow-500 border-gray-300 rounded" required autocomplete="new-password">
-                <label for="remember-me" class="ml-2 block text-sm text-gray-900">
-                  Remember me
-                </label>
-          </div>
 
-          <div class="flex text-sm">
-            <a href="{{route('login')}}" class="font-medium text-indigo-600 hover:text-indigo-500">
-              Do you already have an account?
-            </a>
-          </div>
+        <div class="flex text-sm">
+          <a href="{{route('login')}}" class="font-medium text-indigo-600 hover:text-indigo-500">
+            Do you already have an account?
+          </a>
+        </div>
        
         </div>
 
