@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Mail\PurchaseMade;
 use App\Models\Order;
 use App\Models\UserCart;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -56,8 +57,13 @@ class StripeController extends Controller
   
         $stripe = new \Stripe\StripeClient($secret_key);
         
-        // Create new charges object
-        $stripe->charges->create([
+        // Create new customer and charges object
+        $stripe->customers->create([
+            'name' => Auth::user()->fullname,
+            'email' => Auth::user()->email,
+        ]);
+
+         $stripe->charges->create([
                  'amount' => $amount * 10,
                  'currency' => 'eur',
                  'source' => 'tok_amex', // obtained with Stripe.js
@@ -87,10 +93,10 @@ class StripeController extends Controller
         $details = $request->get('name')." ".$request->get('total')."€";
         Mail::to(Auth::user()->email)->send(New PurchaseMade($details));
 
-       return redirect()->route('success-payment');
+        return redirect()->route('success-payment');
 
-       } catch (\Stripe\Exception\CardException $err) {
-          dd($err);
+       } catch (Exception $ex) {
+          return $ex->getMessage();
        }
     }
 
