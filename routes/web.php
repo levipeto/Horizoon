@@ -81,8 +81,8 @@ Route::group(['middleware' => 'verified'],function(){
     // User account
     Route::get('/profile/settings', [ProfileController::class, 'index'])->name('profile');
     Route::get('/profile/cartpayment',[ProfileController::class, 'index'])->name('user_payment');
-    Route::get('/profile/addcart',[ProfileController::class, 'index'])->name('user_add_cart');
-    Route::post('/addcart',[ProfileController::class, 'addCartData'])->name('data_card');
+    Route::get('/profile/addcart',[ProfileController::class, 'index'])->name('cards');
+    Route::post('/addcart',[ProfileController::class, 'addPaymentCart'])->name('add_card');
     Route::get('/profile/myorder',[ProfileController::class, 'index'])->name('order');
     Route::get('/profile/update',[ProfileController::class, 'index'])->name('account.update');
     Route::patch('/profile/update/store',[ProfileController::class, 'updateData'])->name('account.update.data');

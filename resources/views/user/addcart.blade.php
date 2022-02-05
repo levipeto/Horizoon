@@ -1,18 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    @include('layouts.head')
-    <script defer src="{{ asset('js/card_dateValidation.js') }}"></script>
-    <title>{{ config('app.name') }}@auth | {{Auth::user()->fullname}} shopping @endauth</title>
-</head>
-<body>
 
-   
-   @include('layouts.navbar')
-<form action="{{ route('data_card') }}" method="POST">
+<script defer src="{{ asset('js/card_dateValidation.js') }}"></script>
+
+<div class="w-full h-full p-4 adaptable:p-0 bg-gray-100">
+<form action="{{ route('add_card') }}" method="POST">
 @csrf
-<div class="min-w-screen min-h-screen bg-gray-200 flex items-center justify-center px-5 pb-10 pt-16">
-    <div class="w-full mx-auto rounded-lg bg-white shadow-lg p-5 text-gray-700" style="max-width: 600px">
+<div class="w-full h-full mt-8 adaptable:p-4">
+    <div class="w-full mx-auto text-gray-700" style="max-width: 600px">
         <div class="mb-10">
             <h1 class="text-center font-bold text-xl uppercase">Add your cart</h1>
         </div>
@@ -102,7 +95,7 @@
     </div>
 </div>
 </form>
-
+</div>
 
 </body>
 </html>

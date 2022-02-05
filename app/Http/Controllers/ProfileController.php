@@ -153,6 +153,11 @@ class ProfileController extends Controller
       
     }
 
+    // This function is only for real version
+    public function addPaymentCart(Request $request){
+          return redirect()->back();
+    }
+
     
 
 }

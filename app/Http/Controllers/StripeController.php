@@ -100,15 +100,6 @@ class StripeController extends Controller
        }
     }
 
-    public function verifyCard(){
-
-        $stripe = new \Stripe\StripeClient(
-            'sk_test_51HS0tCKZ8Rg0kXgncd9MHZeqSMBX8zBcn5f8YijsFHCN82nR9hiLhSXSwzH4MVYcf6sEuIZDgTzOsqQYex0cj9KQ00kZvNG0Hk'
-          );
-        $customer = $stripe->customers->create([
-            'description' => 'My First Test Customer (created for API docs)',
-        ]);
-    }
 
 }
 
