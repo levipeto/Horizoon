@@ -45,7 +45,7 @@ class UserCartController extends Controller
         $current_product_cart = $user_cart->where('name',$product->name)->first();
 
         if(!$current_product_cart){
-            //Insert firt product in the cart
+            //Insert first product in the cart
             $cart->name = $product->name;
             $cart->price = $product->price;
             $cart->image = $request['image'];
@@ -58,18 +58,8 @@ class UserCartController extends Controller
             // Updare quantity of existent product
             $new_quantity = (int)$request['quantity']+(int)$current_product_cart->quantity;
             $current_product_cart->update(array('quantity' => $new_quantity));
-            $current_product_cart->save();
         }
 
-        //Stock quantity update
-        $update_quantity = (int)$product->stock_qnt - (int)$request['quantity'];
-        $product->stock_qnt = $update_quantity;
-        $product->update(array('stock_qt' => $product->stock_qnt));
-
-        // Check if stock quantity is < 0
-        if($product->stock_qnt <= 0){
-            $product->stock_qnt = 0;
-        }
 
         return redirect()->back();
     }

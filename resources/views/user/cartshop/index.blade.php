@@ -17,14 +17,14 @@
     //Get total
     $cart = Auth::user()->cart;
     $name = '';
-    $shippcost = '';
-    $iva = '';
+    $shippcost = 7;
     $subtotal = 0;
     foreach($cart as $item){
-          $subtotal += $item->price * $item->quantity;
+          $iva = ($item->price * 22) / 100;
+          $subtotal += $item->price * $item->quantity + $iva;
           $name = $item->name;
     }
-    $total = $subtotal;
+    $total = $subtotal + $shippcost;
     @endphp
 
 
@@ -80,8 +80,8 @@
         <div class="bg-white w-80 mx-auto rounded-sm shadow-2xl p-4 mt-12">
           <div class="p-2">
             <div class="flex-col space-y-3">
-                <div class="font-semibold text-gray-700 text-base border-b border-gray-200 p-1">Iva 0.00</div>
-                <div class="font-semibold text-gray-700 text-base border-b border-gray-200 p-1">shipping cost €0.00</div>
+                <div class="font-semibold text-gray-700 text-base border-b border-gray-200 p-1">Iva  {{"€".number_format($iva,2,'.','')}}</div>
+                <div class="font-semibold text-gray-700 text-base border-b border-gray-200 p-1">shipping cost  {{"€".number_format($shippcost,2,'.','')}}</div>
                 <div class="font-semibold text-gray-700 text-base border-b border-gray-200 p-1">Subtotal:  {{"€".number_format($total,2,'.','')}}</div>
                 <div class="mt-2 font-semibold text-gray-800 text-2xl p-1">Total:  {{"€".number_format($total,2,'.','')}}</div>
             </div>
