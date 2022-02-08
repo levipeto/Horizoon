@@ -18,6 +18,11 @@
 
         @include('layouts.navbar')
 
+        {{-- Banners --}}
+        {{-- <div class="w-full h-72 mt-20 overflow-hidden">
+             <img class="object-cover w-full h-full" src="{{URL::to('/')}}/images/banner-sect.png"}}">
+        </div> --}}
+
         <div class="relative max-w-6xl mobile:w-full adaptable:w-full mx-auto mt-0 adaptable:mt-24 mobile:mt-28 overflow-hidden">
           <div class="pt-8 pb-80 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48 adaptable:block mobile:block adaptable:pb-4">
             <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:static">

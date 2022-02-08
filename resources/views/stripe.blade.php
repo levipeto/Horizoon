@@ -32,7 +32,6 @@
 
    @include('layouts.navbar')
 
-
    <script>var paymentConfig = {publicKey: "{{ env('STRIPE_KEY') }}"};</script>
 
    <div class="max-w-4xl mobile:max-w-2xl adaptable:max-w-2xl mx-auto mt-32 adaptable:mt-44 adaptable:bg-none

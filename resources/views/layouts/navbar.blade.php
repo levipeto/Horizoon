@@ -10,9 +10,9 @@
   <div class="relative flex-1 pl-2 pt-2.5 justify-center">
     <div class="relative flex">
       {{-- search by filter --}}
-      <select class="w-32 rounded-l-sm border border-gray-200 bg-gray-100 text-gray-800 text-base overflow-y-scroll"
+      <select class="w-40 px-2 rounded-l-sm border border-gray-200 bg-white outline-none text-gray-800 text-base overflow-y-scroll"
        name="search-fitler" id="search-filter">
-        <option class="p-1" value="all">all</option>
+        <option class="p-1" value="all">all categories</option>
         <option class="p-1" value="smartphone">smartphone</option>
         <option class="p-1" value="computers">computer</option>
         <option class="p-1" value="accessories">accessories</option>

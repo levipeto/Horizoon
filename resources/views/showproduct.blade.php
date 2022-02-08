@@ -2,7 +2,6 @@
 <html lang="en">
 @include('layouts.head')
 <body>
-
 @include('layouts.navbar')
 
   
@@ -162,7 +161,7 @@
 
     </form>
 
-    <div class="mt-6 block">
+    <div class="mt-6 adaptable:pb-24 block">
       {{-- Show review --}}
       @if ($reviews->count() > 0)
       <button class="show-reviews-btn text-base font-semibold text-indigo-500 w-full border border-indigo-500 rounded-sm px-2 py-2">
