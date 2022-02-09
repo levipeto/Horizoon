@@ -1,4 +1,4 @@
-![Alt text](./public/images/hor-wlp.jpg)
+<!-- ![Alt text](./public/images/horizoon-logo.svg) -->
 <p align="center">
- <img src="./public/images/hor-wlp.jpg" width="150" height="150">
+ <img src="./public/images/horizoon-logo.svg" width="150" height="150">
 </p>
