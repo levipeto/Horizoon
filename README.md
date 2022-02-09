@@ -1,2 +1,2 @@
-![Alt text](./public/images/hor-wlp.jpg)
-<img src="./public/images/hor-wlp.jpg" width="400" height="400">
+![Alt text](./public/images/horizoon-logo.svg)
+<img src="./public/images/horizoon-logo.svg" width="150" height="150">
