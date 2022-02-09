@@ -1,5 +1,2 @@
-<div style="text-align: text-center">
- <h1>
-  <img src="./public/images/horizoon-logo.svg" width="150" height="150">
- </h1>
-</div>
+<!-- ![Alt text](./public/images/hor-wlp.jpg) -->
+<img src="./public/images/hor-wlp.jpg" width="100%" height="150">

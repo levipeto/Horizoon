@@ -15,7 +15,7 @@ class AdminController extends Controller
     }
 
     public function index(){
-
+        
         //Users 
         $users = DB::table('users')->get();
         //Orders 
