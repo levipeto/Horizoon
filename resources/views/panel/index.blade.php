@@ -131,7 +131,7 @@
                                 @endphp
                                 @if (count($images) > 0)    
                                 <div class="flex-shrink-0 w-16 h-16">
-                                  <img class="product-image bottom-0 w-full h-full" src="{{ Storage::url($images[0]) }}">
+                                  <img class="product-image bottom-0 w-full h-full" src="{{ Storage::url($images[array_key_first($images)]) }}">
                                 </div>
                                 @else
                                 <div class="flex-shrink-0 w-16 h-16">

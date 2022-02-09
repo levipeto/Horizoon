@@ -16,9 +16,9 @@
     <div class="adaptable:block flex w-full mobile:block overflow-hidden ">
     {{-- Main photo--}}
     @if (count($images) > 0) 
-    <input type="hidden" name="image" value="{{$images[0]}}">  
+    <input type="hidden" name="image" value="{{$images[array_key_first($images)]}}">  
     <div>
-       <img src="{{ Storage::url($images[0])}}" class="main-image adaptable:w-full adaptable:h-full adaptable:mx-auto object-center object-cover"
+       <img src="{{ Storage::url($images[array_key_first($images)])}}" class="main-image adaptable:w-full adaptable:h-full adaptable:mx-auto object-center object-cover"
        width="350" height="350">
     </div>
     @else

@@ -96,10 +96,11 @@
                    $images = json_decode($product->image,true);
                @endphp
 
-              @if (count($images) > 0)                  {{-- Main images --}}
+              {{-- Main images --}}
+              @if (count($images) > 0)
               <div class="flex pt-1 w-40 h-40 adaptable:w-28 adaptable:h-28 mx-auto overflow-hidden">
-                <input type="hidden" name="image" value="{{$images[0]}}">
-                <img class="product-image object-cover object-center block m-auto" src="{{ Storage::url($images[0]) }}" alt="img no present">
+                <input type="hidden" name="image" value="{{$images[array_key_first($images)]}}">
+                <img class="product-image object-cover object-center block m-auto" src="{{ Storage::url($images[array_key_first($images)]) }}" alt="img no present">
               </div>
               @else
               <div class="flex pt-1 w-40 h-40 adaptable:w-28 adaptable:h-28 mx-auto overflow-hidden">
