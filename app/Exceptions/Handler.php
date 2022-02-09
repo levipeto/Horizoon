@@ -43,11 +43,11 @@ class Handler extends ExceptionHandler
     public function render($request, Throwable $exception)
     {
         // Otherwise display internal error message
-        if(!env('APP_DEBUG', false)){
-            return view('error.main_error');
-        } else {
-            return parent::render($request, $exception);
-        }
+        // if(!env('APP_DEBUG', false)){
+        //     return view('error.main_error');
+        // }
+        
+        return parent::render($request, $exception);
     }
    
 }
