@@ -2,3 +2,11 @@
 <p align="center" style="overflow: hidden">
  <img src="./public/images/horizoon-logo.svg" width="350" height="350">
 </p>
+
+e-commerce developed in Laravel. I laid the groundwork ... you perfect it.
+What do you find inside?
+-Frontend ready
+-User profile
+-Login, registration,
+password recovery,
+email verification
