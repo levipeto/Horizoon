@@ -5,7 +5,7 @@
 
 <h1>Horizoon</h1>
 <h4>
-E-commerce developed in Laravel. I laid the groundwork ... you perfect it.
+E-commerce developed template in Laravel. I laid the groundwork ... you perfect it.
 What do you find inside?</h4>
 <ul>
     <li>
