@@ -14,6 +14,7 @@ body::-webkit-scrollbar
     display: none;
 }
 
+/* Success message */
 .success-msg {
     transition: opacity 0.5s ease-out;
     opacity: 1;
