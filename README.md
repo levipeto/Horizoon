@@ -3,7 +3,7 @@
  <img src="./public/images/horizoon-logo.svg" width="150" height="150">
 </p> -->
 
-<h1><img src="./public/images/horizoon-logo.svg" width="150" height="150"></h1>
+<h1>Horizoon</h1>
 <h4>
 E-commerce developed in Laravel. I laid the groundwork ... you perfect it.
 What do you find inside?</h4>
