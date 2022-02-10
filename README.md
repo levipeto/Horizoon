@@ -5,7 +5,7 @@
 
 <h1>Horizoon</h1>
 <h4>
-E-commerce developed template in Laravel. I laid the groundwork ... you perfect it.
+E-commerce template developed in Laravel. I laid the groundwork... you perfect it.
 What do you find inside?</h4>
 <ul>
     <li>
@@ -35,4 +35,8 @@ What do you find inside?</h4>
         <a>effective product management</a>
     </li>
 </ul>
+
+!!! The products and sponsors used are not licensed, so I am exempt from future problems !!!
+
+AlexSol-dev-1999 | license-mit
 
