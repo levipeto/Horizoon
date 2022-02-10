@@ -30,5 +30,8 @@ What do you find inside?</h2>
     <li>
         <a>Integrated email sending</a>
     </li>
+    <li>
+        <a>effective product management</a>
+    </li>
 </ul>
 
