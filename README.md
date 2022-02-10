@@ -1,10 +1,11 @@
 <!-- ![Alt text](./public/images/horizoon-logo.svg) -->
-<p style="overflow: hidden">
+<!-- <p style="overflow: hidden">
  <img src="./public/images/horizoon-logo.svg" width="150" height="150">
-</p>
+</p> -->
 
+<h2>
 E-commerce developed in Laravel. I laid the groundwork ... you perfect it.
-What do you find inside?
+What do you find inside?</h2>
 <ul>
     <li>
         <a>Frontend</a>
@@ -25,9 +26,6 @@ What do you find inside?
     </li>
      <li>
         <a>Stripe integration</a>
-    </li>
-    <li>
-        <a>Integrated email sending</a>
     </li>
     <li>
         <a>Integrated email sending</a>
