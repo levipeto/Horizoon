@@ -1,16 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
  @include('layouts.head')
-<style>
-.add-cart-btn {
-    display: none;
-}
-
-.product-container:hover .add-cart-btn {
-    display: block;
-}
-
-</style>
 <body>
 
   @include('cookieConsent::index')
@@ -18,11 +8,7 @@
 
         @include('layouts.navbar')
 
-        {{-- Banners --}}
-        {{-- <div class="w-full h-72 mt-20 overflow-hidden">
-             <img class="object-cover w-full h-full" src="{{URL::to('/')}}/images/banner-sect.png"}}">
-        </div> --}}
-
+        {{-- Banner --}}
         <div class="relative max-w-6xl mobile:w-full adaptable:w-full mx-auto mt-0 adaptable:mt-24 mobile:mt-28 overflow-hidden">
           <div class="pt-8 pb-80 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48 adaptable:block mobile:block adaptable:pb-4">
             <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:static">
@@ -55,6 +41,7 @@
         </div>
 
 
+        {{-- Trending products --}}
         <div class="prod-container relative max-w-6xl mobile:w-full adaptable:w-full mx-auto adaptable:mt-8  overflow-hidden">
 
         <div class="font-semibold text-gray-800 text-xl pl-6 border-b border-gray-200 p-4
@@ -112,14 +99,14 @@
                
 
                {{-- Details --}}
-               <div class="px-6 py-4 mobile:text-base">
+               <div class="px-2 py-1.5 mobile:text-base overflow-hidden">
                  <div class="text-sm font-serif">{{$product->category}}</div>
                  <div class="font-semibold text-xl mb-2 text-gray-800 adaptable:text-base mobile:text-base">
                    <a href="{{ route('product.show',  $product->name)}}">{{$product->name}}</a>
                  </div>
-                  <div class="w-full flex space-x-2 adaptable:block mobile:block ">
-                     <div class="text-blue-600 font-medium text-sm adaptable:text-sm">
-                       € {{number_format($product->price,2,'.','')}}
+                  <div class="w-full flex space-x-2 adaptable:block mobile:block overflow-hidden">
+                     <div class="text-blue-600 font-medium adaptable:text-sm">
+                       €{{number_format($product->price,2,'.','')}}
                      </div>
                      <div class="flex justify-center items-center 
                      pl-12 adaptable:pl-0 adaptable:mt-2 mobile:hidden">
@@ -137,19 +124,12 @@
                </div>
              
                {{-- Cart button --}}
-                <div class="pt-2 p-4">
+                <button class="add-cart-btn rounded-full w-10 h-10 bg-yellow-400 overflow-hidden p-1 hover:opacity-80 float-right bottom-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mx-auto text-gray-700" viewBox="0 0 20 20" fill="currentColor">
+                     <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
+                    </svg>
+                </button>
 
-                   <button class="add-cart-btn w-60 mobile:hidden bg-yellow-400 hover:opacity-90 text-gray-900 text-base font-semibold py-0.5 px-4 rounded-sm
-                   mobile:w-full mobile:px-0.5 mobile:py-0.5">
-                     <div class="flex space-x-2 justify-center items-center p-1">
-                       <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-900" viewBox="0 0 20 20" fill="currentColor">
-                         <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
-                       </svg>
-                       Add to cart
-                     </div>
-                   </button>
-
-                 </div>
               </a>
                  </form> 
              </div>
