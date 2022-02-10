@@ -26,5 +26,11 @@ What do you find inside?
      <li>
         <a>Stripe integration</a>
     </li>
+    <li>
+        <a>Integrated email sending</a>
+    </li>
+    <li>
+        <a>Integrated email sending</a>
+    </li>
 </ul>
 
