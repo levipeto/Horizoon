@@ -36,7 +36,5 @@ What do you find inside?</h4>
     </li>
 </ul>
 
-!!! The products and sponsors used are not licensed, so I am exempt from future problems !!!
 
-AlexSol-dev-1999 | license-mit
 
