@@ -5,8 +5,9 @@
 
 e-commerce developed in Laravel. I laid the groundwork ... you perfect it.
 What do you find inside?
--Frontend ready
--User profile
--Login, registration,
-password recovery,
-email verification
+<ul>
+    <li>
+        <a>Front end</a>
+    </li>
+</ul>
+
