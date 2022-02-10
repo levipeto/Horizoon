@@ -88,57 +88,58 @@
    </div>
 
    {{-- Items --}}
-   <div class="menu-items fixed hidden w-1/2 mobile:w-2/3 bg-gray-900 h-screen shadow-2xl overflow-hidden
-   left-0 top-0">
+   <div class="overlay hidden h-full w-full fixed z-10 left-0 right-0 bottom-0 overflow-auto" style="background-color:rgba(0,0,0,0.5);"></div>
+   <div class="menu-items w-2/3 shadow-2xl left-0 inset-y-0 absolute top-0 z-10 bg-gray-800 h-screen transform -translate-x-full 
+   transition duration-300 ease-in-out">
     <div class="block w-full pt-4">
         {{-- All section --}}
         <div class="block mt-6">
-            <ul class="mt-6  text-gray-400 font-semibold text-base">
-              <li class="flex gap-1.5 pl-4 p-2 cursor-pointer text-gray-200 rounded-sm">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mt-0.5 text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <ul class="mt-6text-gray-400 font-semibold text-base">
+              <li class="flex gap-1.5 pl-4 p-2 cursor-pointer text-yellow-400 rounded-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mt-0.5 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
                  <div>Admin {{Auth::user()->fullname}}</div>
               </li>
-              <li class="flex gap-1.5 pl-4 p-2 cursor-pointer hover:bg-yellow-400 rounded-sm">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mt-0.5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+              <li class="flex gap-1.5 pl-4 p-2 cursor-pointer hover:bg-yellow-400 text-gray-50 rounded-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mt-0.5 text-gray-50" viewBox="0 0 20 20" fill="currentColor">
                   <path d="M2 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1H3a1 1 0 01-1-1V4zM8 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1H9a1 1 0 01-1-1V4zM15 3a1 1 0 00-1 1v12a1 1 0 001 1h2a1 1 0 001-1V4a1 1 0 00-1-1h-2z" />
                 </svg>
                 <a href="{{ route('admin.panel')}}">Dashboard</a>
               </li>
-              <li class="flex gap-1.5 pl-4 p-2 cursor-pointer hover:bg-yellow-400 rounded-sm">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mt-0.5 text-gray-400 " fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <li class="flex gap-1.5 pl-4 p-2 cursor-pointer hover:bg-yellow-400 text-gray-50 rounded-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mt-0.5 text-gray-50 " fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
                  <a href="{{ route('add_products') }}">Add product</a>
               </li>
-              <li class="flex gap-1.5 pl-4 p-2 cursor-pointer hover:bg-yellow-400 rounded-sm">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mt-0.5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+              <li class="flex gap-1.5 pl-4 p-2 cursor-pointer hover:bg-yellow-400 text-gray-50 rounded-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mt-0.5 text-gray-50" viewBox="0 0 20 20" fill="currentColor">
                   <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
                 </svg>
                 <a href="{{route('subscribes')}}">Subscribes</a>
              </li>
-              <li class="flex gap-1.5 pl-4 p-2 cursor-pointer hover:bg-yellow-400 rounded-sm ">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mt-0.5 text-gray-400  " fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <li class="flex gap-1.5 pl-4 p-2 cursor-pointer hover:bg-yellow-400 text-gray-50 rounded-sm ">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mt-0.5 text-gray-50  " fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" />
                 </svg>
                 <a href="">Email</a>
               </li>
-              <li class="flex gap-1.5 pl-4 p-2 cursor-pointer hover:bg-yellow-400 rounded-sm">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mt-0.5 text-gray-400 " viewBox="0 0 20 20" fill="currentColor">
+              <li class="flex gap-1.5 pl-4 p-2 cursor-pointer hover:bg-yellow-400 text-gray-50 rounded-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mt-0.5 text-gray-50 " viewBox="0 0 20 20" fill="currentColor">
                   <path fill-rule="evenodd" d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z" clip-rule="evenodd" />
                 </svg>
                 <a href="{{route('orders')}}">Order</a>
               </li>
-              <li class="flex gap-1.5 pl-4 p-2 cursor-pointer hover:bg-yellow-400 rounded-sm">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mt-0.5 text-gray-400 " fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <li class="flex gap-1.5 pl-4 p-2 cursor-pointer hover:bg-yellow-400 text-gray-50 rounded-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mt-0.5 text-gray-50 " fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
                 <a href="">Settings</a>
               </li>
-              <li class="flex gap-1.5 pl-4 p-2 cursor-pointer  hover:bg-yellow-400 rounded-sm">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mt-0.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <li class="flex gap-1.5 pl-4 p-2 cursor-pointer  hover:bg-yellow-400 text-gray-50 rounded-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mt-0.5 text-gray-50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
                 </svg>
                 <a href="">Logout</a>

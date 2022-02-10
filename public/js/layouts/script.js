@@ -63,7 +63,7 @@ const close_vertical_nav_mob = document.querySelector(".close-vertical-nav-mobil
 vertical_nav_btn_mob.addEventListener("click", function (e) {
     vertical_nav_items_mob.classList.remove("-translate-x-full");
     vertical_nav_overlay_mob.classList.remove("hidden");
-    document.body.style.overflow = "hidden";s
+    document.body.style.overflow = "hidden";
 });
 
 close_vertical_nav_mob.addEventListener("click", function (e) {

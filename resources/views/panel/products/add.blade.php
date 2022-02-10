@@ -15,16 +15,17 @@
 
   <div class="flex w-full overflow-hidden adaptable:block">
 
-    {{-- Show success message --}}
-    @if (Session::has('success'))
-     <div class="mt-4">
-      @include('messages.success')
-     </div>
-    @endif
-
     @include('panel.layouts.navbar')
 
     <div class="float-right w-full h-screen adaptable:w-full bg-gray-100 overflow-y-scroll">
+
+    {{-- Show success message --}}
+    @if (Session::has('success'))
+    <div class="mt-4">
+     @include('messages.success')
+    </div>
+    @endif
+
       <div class="px-4 py-5 sm:px-6">
         <form action="{{route('store-product')}}" method="POST" enctype="multipart/form-data">
          <div class="float-right pt-2">
