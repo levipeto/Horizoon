@@ -2,11 +2,27 @@
 <html lang="en">
   @include('panel.layouts.head')
 <style>
+.success-msg {
+    transition: opacity 0.5s ease-out;
+    opacity: 1;
+}
+.success-msg.active {
+    opacity: 0;
+    display: block;
+}
 </style>
 <body>
 
 
   <div class="flex w-full overflow-hidden adaptable:block">
+
+
+    {{-- Show success message --}}
+    @if (Session::has('success'))
+     <div class="mt-4">
+      @include('messages.success')
+     </div>
+    @endif
 
     @include('panel.layouts.navbar')
       
@@ -102,6 +118,7 @@
           </div>
   
         </dl>
+
       </div>
 
   

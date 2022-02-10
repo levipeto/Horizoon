@@ -61,7 +61,7 @@ class UserCartController extends Controller
         }
 
 
-        return redirect()->back();
+        return redirect()->back()->with('success','Your product have been uploaded!');
     }
 
     //Delete single product from user cart

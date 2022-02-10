@@ -10,3 +10,15 @@ body::-webkit-scrollbar
     width: 0;
 }
 
+#sidebar::-webkit-scrollbar{
+    display: none;
+}
+
+.success-msg {
+    transition: opacity 0.5s ease-out;
+    opacity: 1;
+}
+.success-msg.active {
+    opacity: 0;
+    display: block;
+}

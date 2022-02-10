@@ -62,7 +62,9 @@
          <div class="w-full grid grid-cols-4 adaptable:grid-cols-3 adaptable:gap-4
           mobile:grid-cols-2 gap-4
           adaptable:p-2 grid-flow-row adaptable:max-w-xl 
-          mx-auto mt-2 overflow-hidden box-border">
+          mx-auto mt-2 overflow-hidden box-border">  
+
+
           @foreach ($products as $product)
               {{-- Products --}}
               <div class="product-container mobile:h-auto p-2 adaptable:w-full h-auto

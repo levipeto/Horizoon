@@ -127,9 +127,9 @@
        </div>
   </div>
 
+   {{-- Verical nav --}}
    <div class="categories adaptable:hidden mobile:hidden bg-gray-900 border-t border-gray-700">
         <ul class="flex gap-4 pl-5 p-2 overflow-x-auto">
-
          {{-- Verical nav btn--}}
          <li>
             <button class="vertical-nav-btn opacity-90 hover:opacity-100">
@@ -230,9 +230,7 @@
   
 {{-- Mobile/other--}}
 <div class="block max-w-7xl relative large:hidden p-0.5">
-    
   <div class="flex space-x-2 w-full pt-0 justify-center items-center">
-
      {{--Logo--}}
      <div class="w-full overflow-hidden pt-1">
        <div class="pl-0.5">
@@ -307,24 +305,24 @@
    </div>  
     
   <div class="categories 2xl:hidden xl:hidden bg-gray-900 border-t border-gray-700">
-    <ul class="flex gap-4 pl-5 overflow-x-scroll p-1.5">
+    <ul class="flex gap-4 pl-2 overflow-x-scroll p-1.5" id="sidebar">
       {{-- Categories --}}
-      <li class="flex-1 text-gray-100 font-semibold text-sm hover:text-yellow-400">
+      <li class="text-gray-100 font-semibold text-sm hover:text-yellow-400 p-0.5">
         <a href="{{ route('categories', 'smartphone') }}">Smartphone</a>
       </li>
-      <li class="flex-1 text-gray-100 font-semibold text-sm hover:text-yellow-400">
+      <li class="text-gray-100 font-semibold text-sm hover:text-yellow-400 p-0.5">
         <a href="{{ route('categories', 'videogames') }}">VideoGames</a>
       </li>
-      <li class="flex-1 text-gray-100 font-semibold text-sm hover:text-yellow-400">
+      <li class="text-gray-100 font-semibold text-sm hover:text-yellow-400 p-0.5">
         <a href="{{ route('categories', 'computers') }}">Computers</a>
       </li>
-      <li class="flex-1 text-gray-100 font-semibold text-sm hover:text-yellow-400">
+      <li class="text-gray-100 font-semibold text-sm hover:text-yellow-400 p-0.5">
         <a href="{{ route('categories', 'accessories') }}">Accessories</a>
       </li>
-      <li class="flex-1 text-gray-100 font-semibold text-sm hover:text-yellow-400">
+      <li class="text-gray-100 font-semibold text-sm hover:text-yellow-400 p-0.5">
         <a href="{{ route('categories', 'tv') }}">Tv</a>
       </li>
-      <li class="flex-1 text-gray-100 font-semibold text-sm hover:text-yellow-400">
+      <li class="text-gray-100 font-semibold text-sm hover:text-yellow-400 p-0.5">
         <a href="{{ route('categories', 'headphones') }}">HeadPhones</a>
       </li>
 

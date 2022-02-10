@@ -7,9 +7,19 @@
 
    @include('layouts.navbar')
 
+
+
    <div class="max-w-5xl adaptable:w-full adaptable:mt-44 mx-auto mt-36 p-2 overflow-hidden">
-    <div class="text-2xl font-bold text-yellow-500 pl-6"><span class="text-gray-600">{{Auth::user()->fullname}}</span>
-     Favourites list <span>({{$favourites->count()}})</span></div>
+    <div class="flex">
+      <div class="text-2xl font-bold text-yellow-500 pl-6"><span class="text-gray-600">{{Auth::user()->fullname}}</span>
+        Favourites list <span>({{$favourites->count()}})</span></div>
+    </div>
+
+    {{-- Show success message --}}
+    @if (Session::has('success'))
+       @include('messages.success')
+    @endif
+
    @foreach ($favourites as $favourite)
         <div class="flex space-x-2 border-b adaptable:block border-gray-300 pt-4 p-6">
                {{-- Images --}}
@@ -18,7 +28,7 @@
                @endphp
 
                <div class="adaptable:w-full adaptable:mx-auto"> 
-                  <img class="product-image object-center adaptable:mx-auto" src="{{ Storage::url($images[0]) }}" width="200" height="200">
+                  <img class="product-image object-center adaptable:mx-auto" src="{{$images[array_key_first($images)]}}" width="200" height="200">
                </div>
 
              <div class="block pt-1.5 pl-4">
@@ -56,8 +66,14 @@
                 <div class="font-semibold text-gray-700 text-lg">€{{number_format($favourite->price,2,'.','')}}</div>
 
                 <div class="flex space-x-2">
-                    <button class="inline-block w-32 mt-4 text-center bg-indigo-500 border border-transparent 
-                    rounded-md py-1 px-1 text-base font-semibold text-white hover:opacity-90">Add to cart</button>
+                    <form action="{{route("store_product",$product->name)}}" method="POST">
+                      @csrf
+                      <input type="hidden" name="quantity" value="1">
+                      <input type="hidden" name="image" value="{{$images[array_key_first($images)]}}">
+
+                      <button class="inline-block w-32 mt-4 text-center bg-indigo-500 border border-transparent 
+                      rounded-md py-1 px-1 text-base font-semibold text-white hover:opacity-90">Add to cart</button>
+                    </form>
                     <form action="{{ route('delete.fav', $favourite->id) }}" method="POST">
                      @csrf
                      <button class="inline-block w-32 mt-4 text-center bg-indigo-500 border border-transparent 
@@ -66,11 +82,10 @@
                 </div>
 
              </div>
-
         </div>
    @endforeach
      @if (Auth::user()->favourites->count() > 0)
-      <div class="pl-8 adaptable:pl-10 p-2">
+      <div class="pl-6 pt-4 adaptable:pl-10 p-2">
          <form action="{{ route('clear.fav') }}" method="POST">
          @csrf
          <button class="inline-block w-72 mt-4 text-center bg-red-500 border border-transparent 
@@ -79,6 +94,7 @@
       </div>
      @endif
    </div>
+
 
    @include('layouts.footer')
 

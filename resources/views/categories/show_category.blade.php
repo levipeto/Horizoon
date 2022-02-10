@@ -41,8 +41,8 @@
 
              @if (count($images) > 0)
             <div>
-              <input type="hidden" name="image" value="{{$images[0]}}">
-              <img class="product-image object-center" src="{{ Storage::url($images[0]) }}" width="200" height="200">
+              <input type="hidden" name="image" value="{{$images[array_key_first($images)]}}">
+              <img class="product-image object-center" src="{{ Storage::url($images[array_key_first($images)]) }}" width="200" height="200">
             </div>
             @else
             <div>

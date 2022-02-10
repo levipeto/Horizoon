@@ -74,9 +74,10 @@ class ProductsController extends Controller
         $product->sale = trim($data['product-sale']);
         $product->category = trim($data['product-category']);
         $product->description = trim($data['product-description']);
-        $product->price =$data['product-price'];
+        $product->price = $data['product-price'];
         $product->stock_qnt = $data['product-quantity'];
 
+        // Image store
         if($request->hasfile('product-image')) {
             $images = [];
             foreach($request->file('product-image') as $file)
@@ -154,7 +155,7 @@ class ProductsController extends Controller
             dd($exception->getMessage());
         }
 
-        return redirect()->back();
+        return redirect()->back()->with('success','Your product have been uptaded!');
         
     }
 
