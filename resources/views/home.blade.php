@@ -5,7 +5,6 @@
 
   @include('cookieConsent::index')
 
-
         @include('layouts.navbar')
 
         {{-- Banner --}}

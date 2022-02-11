@@ -2,6 +2,9 @@
 <html lang="en">
 @include('layouts.head')
 <body>
+
+@include('cookieConsent::index')
+
 @include('layouts.navbar')
 
   
@@ -241,7 +244,6 @@
     </script>
 
   
-     @include('cookieConsent::index')
      @include('layouts.footer')
 
 </body>
