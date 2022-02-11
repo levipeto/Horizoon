@@ -41,8 +41,7 @@
         {{-- Trending products --}}
         <div class="prod-container relative max-w-6xl mobile:w-full adaptable:w-full mx-auto adaptable:mt-8  overflow-hidden">
 
-        <div class="font-semibold text-gray-800 text-xl pl-6 border-b border-gray-200 p-4
-        z-10">Trending products</div>
+        <div class="font-semibold text-gray-800 text-xl pl-6 border-b border-gray-200 p-4">Trending products</div>
          <div class="w-full grid grid-cols-4 adaptable:grid-cols-3 adaptable:gap-4
           mobile:grid-cols-2 gap-4
           adaptable:p-2 grid-flow-row adaptable:max-w-xl 
