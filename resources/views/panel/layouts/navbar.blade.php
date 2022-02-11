@@ -11,11 +11,24 @@
             {{-- All section --}}
             <div class="block mt-6">
                 <ul class="mt-6 text-gray-400 font-semibold text-base">
-                  <li class="flex gap-1.5 pl-4 p-2 cursor-pointer text-gray-200 rounded-sm">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mt-0.5 text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                     <div>Admin {{Auth::user()->fullname}}</div>
+                  <li class="flex gap-1.5 pl-4 p-2 text-gray-200 rounded-sm">
+                    <div class="w-12 h-12 rounded-full">
+                      @auth
+                      @if(Auth::user()->image == null)
+                       <button class="flex-1 rounded-full w-12 h-12 bg-yellow-400 justify-center items-center
+                       text-gray-800 font-semibold text-2xl">
+                        @php
+                       $username = Auth::user()->fullname;
+                       $first_letter = substr($username, 0, 1);
+                       @endphp
+                       {{ $first_letter}}
+                       </button>
+                       @else
+                           <img class="rounded-full w-12 h-12 justify-center items-center overflow-hidden object-cover" src="{{ Storage::url(Auth::user()->image) }}">
+                       @endif
+                      @endauth
+                   </div>
+                    <div class="text-gray-100 font-semibold text-base pt-1 pl-1">{{Auth::user()->fullname}}</div>
                   </li>
                   <li class="flex gap-1.5 pl-4 p-2 cursor-pointer hover:bg-gray-800 rounded-sm">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mt-0.5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
@@ -89,18 +102,31 @@
 
    {{-- Items --}}
    <div class="overlay hidden h-full w-full fixed z-10 left-0 right-0 bottom-0 overflow-auto" style="background-color:rgba(0,0,0,0.5);"></div>
-   <div class="menu-items w-2/3 shadow-2xl left-0 inset-y-0 absolute top-0 z-10 bg-gray-800 h-screen transform -translate-x-full 
+   <div class="menu-items w-2/3 shadow-2xl left-0 inset-y-0 absolute top-0 z-10 bg-gray-900 h-screen transform -translate-x-full 
    transition duration-300 ease-in-out">
-    <div class="block w-full pt-4">
+    <div class="block w-full">
+      <div class="flex border-b border-gray-600 p-4">
+        <div class="w-12 h-12 rounded-full">
+              @auth
+              @if(Auth::user()->image == null)
+               <button class="flex-1 rounded-full w-10 h-10 bg-yellow-400 justify-center items-center
+               text-gray-800 font-semibold text-2xl">
+                @php
+               $username = Auth::user()->fullname;
+               $first_letter = substr($username, 0, 1);
+               @endphp
+               {{ $first_letter}}
+               </button>
+               @else
+                   <img class="rounded-full w-10 h-10 justify-center items-center overflow-hidden object-cover" src="{{ Storage::url(Auth::user()->image) }}">
+               @endif
+              @endauth
+           </div>
+         <div class="text-gray-100 font-semibold text-base pt-1 pl-1">{{Auth::user()->fullname}}</div>
+      </div>
         {{-- All section --}}
         <div class="block mt-6">
             <ul class="mt-6text-gray-400 font-semibold text-base">
-              <li class="flex gap-1.5 pl-4 p-2 cursor-pointer text-yellow-400 rounded-sm">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mt-0.5 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                 <div>Admin {{Auth::user()->fullname}}</div>
-              </li>
               <li class="flex gap-1.5 pl-4 p-2 cursor-pointer hover:bg-yellow-400 text-gray-50 rounded-sm">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mt-0.5 text-gray-50" viewBox="0 0 20 20" fill="currentColor">
                   <path d="M2 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1H3a1 1 0 01-1-1V4zM8 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1H9a1 1 0 01-1-1V4zM15 3a1 1 0 00-1 1v12a1 1 0 001 1h2a1 1 0 001-1V4a1 1 0 00-1-1h-2z" />

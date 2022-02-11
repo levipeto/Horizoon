@@ -23,17 +23,15 @@
               </div>
 
               <div>
-                <div class="mt-10">
-     
-                  <div aria-hidden="true" class="pointer-events-none adaptable:hidden lg:absolute lg:inset-y-0 lg:max-w-7xl lg:mx-auto lg:w-full">
-                    <div class="absolute transform sm:left-1/2 sm:top-0 sm:translate-x-8 lg:left-1/2 lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-8">
+                <div class="mt-10 adaptable:mt-0">
+                  <div aria-hidden="true" class="pointer-events-none adaptable:max-w-sm adaptable:max-h-52 adaptable:overflow-hidden adaptable:p-0 adaptable:m-0 lg:absolute lg:inset-y-0 lg:max-w-7xl lg:mx-auto lg:w-full">
+                    <div class="absolute adaptable:relative transform sm:left-1/2 sm:top-0 sm:translate-x-8 lg:left-1/2 lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-8">
                       <div>
-                        <img class="object-cover object-center"  src="{{URL::to('/')}}/images/hor-giftcard.png">
+                        <img class="adaptable:w-full adaptable:h-64 object-cover object-center"  src="{{URL::to('/')}}/images/hor-giftcard.png">
                       </div>
                     </div>
                   </div>
-
-                  <a href="#" class="inline-block text-center bg-indigo-600 border border-transparent rounded-md py-3 px-8 font-medium text-white hover:bg-indigo-700">Look for more</a>
+                  <a href="#" class="inline-block text-center adaptable:mt-8 adaptable:ml-1 adaptable:w-60 mobile:w-full bg-indigo-600 border border-transparent rounded-md py-3 px-8 font-medium text-white hover:bg-indigo-700">Look for more</a>
                 </div>
               </div>
             </div>
@@ -57,7 +55,7 @@
               <div class="product-container mobile:h-auto p-2 adaptable:w-full h-auto
               mobile:border mobile:border-gray-200 border border-gray-200
               overflow-hidden cursor-pointer adaptable:shadow-none mobile:shadow-none
-              rounded-sm ">
+              rounded-sm">
                         
                <div class="float-left absolute cursor-pointer">
                   <form action="{{ route('store.fav', $product->id) }}" method="POST">
@@ -101,11 +99,11 @@
                {{-- Details --}}
                <div class="px-2 py-1.5 mobile:text-base overflow-hidden">
                  <div class="text-sm font-serif">{{$product->category}}</div>
-                 <div class="font-semibold text-xl mb-2 text-gray-800 adaptable:text-base mobile:text-base">
+                 <div class="font-semibold text-xl mb-2 text-gray-800 adaptable:text-base mobile:text-base overflow-hidden">
                    <a href="{{ route('product.show',  $product->name)}}">{{$product->name}}</a>
                  </div>
                   <div class="w-full flex space-x-2 adaptable:block mobile:block overflow-hidden">
-                     <div class="text-blue-600 font-medium adaptable:text-sm">
+                     <div class="text-blue-600 font-medium adaptable:text-base adaptable:absolute adaptable:text-center">
                        €{{number_format($product->price,2,'.','')}}
                      </div>
                      <div class="flex justify-center items-center 
@@ -124,7 +122,7 @@
                </div>
              
                {{-- Cart button --}}
-                <button class="add-cart-btn rounded-full w-10 h-10 bg-yellow-400 overflow-hidden p-1 hover:opacity-80 float-right bottom-0">
+                <button class="add-cart-btn rounded-full w-10 h-10 bg-yellow-400 overflow-hidden p-1 hover:opacity-80 bottom-0 float-right">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mx-auto text-gray-700" viewBox="0 0 20 20" fill="currentColor">
                      <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
                     </svg>
