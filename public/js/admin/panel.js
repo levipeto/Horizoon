@@ -1,5 +1,6 @@
 // "use strict";
 
+// Menu mobile open
 // let menu_panel_btn = document.querySelector(".menu");
 // let menu_items = document.querySelector(".menu-items");
 // let overlay = document.querySelector(".overlay");
