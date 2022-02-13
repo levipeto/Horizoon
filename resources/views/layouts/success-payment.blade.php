@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    @include('layouts.head')
-    <title>Successfull payment</title>
-</head>
-<style>
-    body{
-        margin: 0;
-        background-color: rgb(250, 182, 54);
-    }
-</style>
-<body>
+@extends('layouts.master')
+
+@section('content')
 
 <div class="max-w-4xl mobile:max-w-2xl mx-auto p-4">
     <div class="text-center text-white font-bold text-4xl mt-24">
@@ -23,14 +13,10 @@
     </div>
 </div>
 
-
-
 <script>
     setTimeout(() => {
         window.location.href = "{{route('home')}}";
     }, 1500);
 </script>
 
-    
-</body>
-</html>
+@endsection

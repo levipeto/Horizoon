@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-   @extends('layouts.head')
-   @section('title','Send reset email')
-</head>
-<body>
-
-   
+@extends('layouts.master')
+@section('content')
+  
 <div class="flex w-full h-full adaptable:block
 adaptable:max-w-xl adaptable:mx-auto 
 adaptable:pl-12 adaptable:mt-12 adaptable:h-auto
@@ -56,6 +50,5 @@ mobile:pl-4">
     </div>
 </div>
 
-    
-</body>
-</html>
+      
+@endsection

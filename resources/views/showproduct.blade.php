@@ -1,13 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-@include('layouts.head')
-<body>
+@extends('layouts.master')
 
-@include('cookieConsent::index')
+@section('title',$product->category." | ".$product->name)
 
-@include('layouts.navbar')
-
-  
+@section('content')
 <div class="bg-white mt-24 adaptable:mt-32">
   <div class="pt-6">
 
@@ -243,9 +238,4 @@
       });
     </script>
 
-  
-     @include('layouts.footer')
-
-</body>
-</html> 
-
+@endsection

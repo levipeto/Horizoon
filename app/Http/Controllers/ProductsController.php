@@ -16,8 +16,6 @@ use Intervention\Image\Facades\Image as Image;
 
 class ProductsController extends Controller
 {
-
-
     /**
      * Show all products
      *
@@ -26,7 +24,6 @@ class ProductsController extends Controller
      */
     public function show($name)
     {
-
         $product_name= Product::where('name',$name)->first();
         $product = Product::findOrFail($product_name->id);
         

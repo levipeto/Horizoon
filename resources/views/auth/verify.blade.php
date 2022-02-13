@@ -1,15 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    @include('layouts.head')
-</head>
-<style>
-    body{
-        background-color: rgb(19, 17, 17);
-    }
-</style>
-<body>
+@extends('layouts.master')
 
+@section('content')
 
 <div class="mt-2">
     <a href="{{ route('home') }}">
@@ -52,7 +43,4 @@
    </div>
 </div>
 
-
-
-</body>
-</html>
+@endsection
