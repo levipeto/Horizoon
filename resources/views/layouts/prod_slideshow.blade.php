@@ -4,8 +4,9 @@ $products = DB::table('products')->get();
 @endphp
 
 <!-- component -->
-<div class="flex flex-col max-w-6xl mx-auto adaptable:w-full mobile:w-full adaptable:mt-8">
-    <h1 class="flex py-5 font-bold text-xl  adaptable:pl-4 mobile:pl-4 text-gray-800">
+<div class="flex flex-col bg-gray-50 max-w-6xl mx-auto adaptable:w-full mobile:w-full mt-12 pl-8 p-8 adaptable:pl-0 mobile:pl-0 adaptable:mt-6
+border-t">
+    <h1 class="flex py-5 font-bold text-xl adaptable:pl-4 mobile:pl-4 text-gray-800">
     it might interest you
     </h1>
           <div

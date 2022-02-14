@@ -3,7 +3,7 @@
 @section('title',$product->category." | ".$product->name)
 
 @section('content')
-<div class="bg-white mt-24 adaptable:mt-32">
+<div class="bg-white overflow-hidden mt-24 adaptable:mt-32 pl-6 adaptable:pl-0">
   <div class="pt-6">
 
   <form action="{{ route('store_product', $product->name)}}" method="POST">
@@ -180,9 +180,9 @@
 
     </div>
 
-    @include('layouts.prod_slideshow')
-
     </div>
+
+    @include('layouts.prod_slideshow')
 
     {{-- Show reviews --}}
     @include('reviews')

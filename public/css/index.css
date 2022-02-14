@@ -1,8 +1,8 @@
 body {
     position: relative;
     margin: 0;
-    padding-bottom: 18rem;
-    min-height: 1200px;
+    padding-bottom: 28rem;
+    min-height: 1000px;
 }
 
 body::-webkit-scrollbar {

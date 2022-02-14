@@ -44,7 +44,6 @@
   adaptable:p-2 grid-flow-row adaptable:max-w-xl 
   mx-auto mt-2 overflow-hidden box-border">  
 
-
   @foreach ($products as $product)
       {{-- Products --}}
       <div class="product-container mobile:h-auto p-2 adaptable:w-full h-auto
@@ -184,8 +183,6 @@
           <img src="{{ asset('images/brands/stripe-logo.png') }}" width="100" height="100">
         </div>
   </div>
-</div>
-
 </div>
     
 @endsection

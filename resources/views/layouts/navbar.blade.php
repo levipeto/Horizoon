@@ -569,8 +569,8 @@ transform -translate-x-full transition duration-300 ease-in-out" style="width: 3
         </form>
      </li>
       @endauth
-     <li class="text-gray-600 font-semibold text-base hover:bg-gray-200 p-2">
-       <a href="#">
+     <li class=" hover:bg-gray-200 p-2">
+       <a class="text-gray-600 font-semibold text-base" href="#">
          @auth
          Deliver to {{Auth::user()->address}}
          @endauth
@@ -580,7 +580,7 @@ transform -translate-x-full transition duration-300 ease-in-out" style="width: 3
        </a>
      </li>
      <li class="text-gray-600 font-semibold text-base hover:bg-gray-200 p-2">
-       <a href="#">
+       <a class="text-gray-600 font-semibold text-base" href="">
        Support
        </a>
      </li>

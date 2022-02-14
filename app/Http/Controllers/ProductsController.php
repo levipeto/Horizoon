@@ -47,7 +47,17 @@ class ProductsController extends Controller
 
         $products = Product::where('category',$name)->get();
 
-        return view('categories.show_category',compact('products','name'));
+        $fav_list = [];
+
+        // Only if the user is logged in
+        if(Auth::check() == true){
+         $favourites = Auth::user()->favourites;
+         foreach ($favourites as $is_favourite) {
+            array_push($fav_list,$is_favourite->name);
+         }
+        }
+
+        return view('categories.show_category',compact('products','name','fav_list'));
     }
 
     /* Show add products section */
