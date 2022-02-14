@@ -5,7 +5,7 @@
 @section('content')
 
 {{-- Banner --}}
-<div class="relative max-w-6xl mobile:w-full adaptable:w-full mx-auto mt-0 adaptable:mt-24 mobile:mt-28 overflow-hidden">
+<div class="relative max-w-6xl mobile:w-full adaptable:w-full mx-auto mt-0 pt-12 adaptable:mt-24 mobile:mt-28 overflow-hidden">
   <div class="pt-8 pb-80 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48 adaptable:block mobile:block adaptable:pb-4">
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:static">
       <div class="sm:max-w-lg">
@@ -20,10 +20,10 @@
 
       <div>
         <div class="mt-10 adaptable:mt-0">
-          <div aria-hidden="true" class="pointer-events-none adaptable:max-w-sm adaptable:max-h-52 adaptable:overflow-hidden adaptable:p-0 adaptable:m-0 lg:absolute lg:inset-y-0 lg:max-w-7xl lg:mx-auto lg:w-full">
+          <div aria-hidden="true" class="pointer-events-none adaptable:max-w-sm adaptable:h-full adaptable:overflow-hidden adaptable:p-0 adaptable:m-0 lg:absolute lg:inset-y-0 lg:max-w-7xl lg:mx-auto lg:w-full">
             <div class="absolute adaptable:relative transform sm:left-1/2 sm:top-0 sm:translate-x-8 lg:left-1/2 lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-8">
               <div>
-                <img class="adaptable:w-full adaptable:h-64 object-cover object-center"  src="{{URL::to('/')}}/images/hor-giftcard.png">
+                <img class="object-cover object-center"  src="{{URL::to('/')}}/images/hor-giftcard.png">
               </div>
             </div>
           </div>

@@ -1,8 +1,8 @@
-
 <header>
 <div class="overlay hidden h-full w-full fixed z-10 left-0 right-0 overflow-auto" style="background-color:rgba(0,0,0,0.5);"></div>
-<nav class="w-full top-0 m-0 p-0 fixed z-10 bg-gray-900 shadow-md">
 
+<nav class="w-full top-0 m-0 p-0 left-0 right-0 fixed z-10 bg-gray-900 shadow-md">
+  
   {{-- Dekstop --}}
 <div class="flex w-full relative adaptable:hidden p-1">
     

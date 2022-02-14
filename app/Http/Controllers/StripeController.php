@@ -36,6 +36,7 @@ class StripeController extends Controller
     public function stripePost(Request $request)
     {
         $cart = Auth::user()->cart;
+
         try {
     
             foreach($cart as $product)
@@ -91,7 +92,7 @@ class StripeController extends Controller
             $cart->where('user_id',Auth::user()->id)->first();
             $cart::truncate();
             
-            //Email send
+            //send email after purchase
             $details = $request->get('name')." ".$request->get('total')."€";
             Mail::to(Auth::user()->email)->send(New PurchaseMade($details));
     

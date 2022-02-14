@@ -178,7 +178,10 @@
 
     </div>
 
-      </div>
+    </div>
+
+    @include('layouts.prod_slideshow')
+
     </div>
 
     {{-- Show reviews --}}

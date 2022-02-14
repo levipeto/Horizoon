@@ -30,7 +30,7 @@
                         {{-- Input file --}}
                         <label for="upload-photo" id="upload-photo-btn" class="cursor-pointer w-full">
                           <input type="file" class="hidden" name="profile_image" id="upload-photo"> 
-                          <div class="px-1 py-1 adaptable:w-full adaptable:left-0 w-44 mobile:w-full bg-yellow-300 hover:bg-yellow-400 text-gray-900 rounded-sm font-semibold text-base shadow-md text-center">Choose photo</div>
+                          <div class="px-1 py-1 adaptable:w-full adaptable:left-0 w-44 mobile:w-full bg-gray-200 hover:bg-yellow-400 text-gray-900 rounded-sm font-semibold text-base shadow-md text-center">Choose photo</div>
                         </label>
                         {{-- Btn --}}
                          <div class="flex gap-2">
@@ -57,7 +57,7 @@
                      </div>
                   </div>
                   <div class="ml-auto adaptable:ml-0 adaptable:w-full pt-6 adaptable:pr-6">
-                  <button type="submit" class="px-1.5 py-1.5 adaptable:w-full w-44 mobile:w-full bg-yellow-300 hover:bg-yellow-400 text-gray-900 rounded-sm font-semibold text-base shadow-md">Edit</button>
+                  <button type="submit" class="px-1.5 py-1.5 adaptable:w-full w-44 mobile:w-full bg-gray-200 hover:bg-yellow-400 text-gray-900 rounded-sm font-semibold text-base shadow-md">Edit</button>
                   </div>
                  </form>
                 </li>
@@ -75,7 +75,7 @@
                      </div>
                   </div>
                  <div class="ml-auto adaptable:ml-0 pt-6 adaptable:pr-6 adaptable:w-full">
-                  <button class="px-1.5 py-1.5 adaptable:w-full w-44 mobile:w-full bg-yellow-300 hover:bg-yellow-400 text-gray-900 rounded-sm font-semibold text-base shadow-md">Edit</button>
+                  <button class="px-1.5 py-1.5 adaptable:w-full w-44 mobile:w-full bg-gray-200 hover:bg-yellow-400 text-gray-900 rounded-sm font-semibold text-base shadow-md">Edit</button>
                  </div>
                   </form>
                 </li>
@@ -93,7 +93,7 @@
                      </div>
                   </div>
                  <div class="ml-auto pt-6 adaptable:ml-0 adaptable:w-full adaptable:pr-6">
-                  <button class="px-1.5 py-1.5 adaptable:w-full w-44 mobile:w-full bg-yellow-300 hover:bg-yellow-400 text-gray-900 rounded-sm font-semibold text-base shadow-md">Edit</button>
+                  <button class="px-1.5 py-1.5 adaptable:w-full w-44 mobile:w-full bg-gray-200 hover:bg-yellow-400 text-gray-900 rounded-sm font-semibold text-base shadow-md">Edit</button>
                  </div>
                   </form>
                 </li>
@@ -111,7 +111,7 @@
                      </div>
                   </div>
                  <div class="ml-auto pt-6 adaptable:pr-6 adaptable:ml-0 adaptable:w-full">
-                  <button class="px-1.5 py-1.5 adaptable:w-full w-44 mobile:w-full bg-yellow-300 hover:bg-yellow-400 text-gray-900 rounded-sm font-semibold text-base shadow-md">Edit</button>
+                  <button class="px-1.5 py-1.5 adaptable:w-full w-44 mobile:w-full bg-gray-200 hover:bg-yellow-400 text-gray-900 rounded-sm font-semibold text-base shadow-md">Edit</button>
                  </div>
                   </form>
                 </li>
@@ -129,7 +129,7 @@
                      </div>
                   </div>
                  <div class="ml-auto pt-6 adaptable:pr-6 adaptable:ml-0 adaptable:w-full">
-                  <button class="px-1.5 py-1.5 adaptable:w-full w-44 mobile:w-full bg-yellow-300 hover:bg-yellow-400 text-gray-900 rounded-sm font-semibold text-base shadow-md">Edit</button>
+                  <button class="px-1.5 py-1.5 adaptable:w-full w-44 mobile:w-full bg-gray-200 hover:bg-yellow-400 text-gray-900 rounded-sm font-semibold text-base shadow-md">Edit</button>
                  </div>
                   </form>
                 </li>
@@ -154,12 +154,12 @@
                         </a>
                       </div>
                       <div class="ml-auto pt-2 w-full 2xl:hidden xl:hidden lg:hidden">
-                        <button class="px-1.5 py-1.5 w-full bg-yellow-300 hover:bg-yellow-400 text-gray-900 rounded-sm font-semibold text-base shadow-md">Edit</button>
+                        <button class="px-1.5 py-1.5 w-full bg-gray-200 hover:bg-yellow-400 text-gray-900 rounded-sm font-semibold text-base shadow-md">Edit</button>
                        </div>
                      </div>
                   </div>
                  <div class="ml-auto pt-6 adaptable:hidden mobile:hidden">
-                  <button class="px-1.5 py-1.5 w-44 bg-yellow-300 hover:bg-yellow-400 text-gray-900 rounded-sm font-semibold text-base shadow-md">Edit password</button>
+                  <button class="px-1.5 py-1.5 w-44 bg-gray-200 hover:bg-yellow-400 text-gray-900 rounded-sm font-semibold text-base shadow-md">Edit password</button>
                  </div>
                   </form>
                 </li>

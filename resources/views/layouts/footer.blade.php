@@ -1,5 +1,5 @@
 {{-- Footer --}}
-<footer class="absolute bottom-0 left-0 right-0 mb-0 w-full p-0 bg-gray-900 overflow-hidden">
+<footer class="absolute bottom-0 left-0 right-0 mt-12 w-full bg-gray-900 overflow-hidden">
        <div class="grid grid-cols-3 p-4
         adaptable:grid-cols-2  mobile:block">
             <div class="block text-gray-300 font-semibold text-base mobile:mt-2">

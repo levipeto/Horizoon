@@ -30,8 +30,7 @@ class ProfileController extends Controller
 
     public function updateData(Request $request){
 
-      $id = Auth::user()->id;
-      $user = User::findOrFail($id);
+      $user = User::findOrFail(Auth::user()->id);
 
       $request->validate([
         'fullname' => ["string","regex:/^[a-z A-Z0-9\\/\\\\.'\"]+$/"],
@@ -40,10 +39,9 @@ class ProfileController extends Controller
         'city' => 'string',
       ]);
 
-
       if($request->input('fullname')){
-            $user->update(['fullname' => $request->input('fullname')]);
-            $user->save();
+          $user->update(['fullname' => $request->input('fullname')]);
+          $user->save();
       }
       
       if($request->input('email')){
@@ -64,7 +62,7 @@ class ProfileController extends Controller
       if($request->input('city')){
         $user->update(['city' => $request->input('city')]);
         $user->save();
-    }
+      }
       
        return redirect()->back();
 
@@ -147,10 +145,6 @@ class ProfileController extends Controller
       $clear = DB::table('favourites')->where('user_id',Auth::user()->id)->delete();
       if($clear) return redirect()->back()->with(['message' => 'List deleted successfullys']);
       else return redirect()->back();
-    }
-
-    public function addItemToCart(){
-      
     }
 
     // This function is only for real version

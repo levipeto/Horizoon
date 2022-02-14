@@ -23,8 +23,8 @@ class UserCartController extends Controller
     public function index(){
 
         $carts = Auth::user()->cart;
-
         $product = Product::all();
+
         return view('user.cartshop.index',compact('carts','product'));
     }
 
@@ -38,14 +38,14 @@ class UserCartController extends Controller
         $product_name= Product::where('name',$name)->first();
         $product = Product::findOrFail($product_name->id); 
 
-        //Get user cart-db
+        //Get user cart from db
         $user = Auth::user();
         $cart = new UserCart();
         $user_cart = Auth::user()->cart;
         $current_product_cart = $user_cart->where('name',$product->name)->first();
 
+        //if the product has not already been included in the cartel then include it
         if(!$current_product_cart){
-            //Insert first product in the cart
             $cart->name = $product->name;
             $cart->price = $product->price;
             $cart->image = $request['image'];
@@ -54,12 +54,11 @@ class UserCartController extends Controller
             $cart->save();
         }
 
+         // Updare quantity of existent product
         if($current_product_cart){
-            // Updare quantity of existent product
             $new_quantity = (int)$request['quantity']+(int)$current_product_cart->quantity;
             $current_product_cart->update(array('quantity' => $new_quantity));
         }
-
 
         return redirect()->back()->with('success','Your product have been uploaded!');
     }

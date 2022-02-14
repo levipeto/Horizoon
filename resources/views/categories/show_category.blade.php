@@ -75,25 +75,20 @@
        
          {{-- Cart button --}}
           <div class="pt-2 p-4">
-
-             <button class="add-cart-btn w-60 mobile:hidden bg-yellow-400 hover:opacity-90 text-gray-900 text-base font-semibold py-0.5 px-4 rounded-sm
-             mobile:w-full mobile:px-0.5 mobile:py-0.5">
-               <div class="flex space-x-2 justify-center items-center p-1">
-                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-900" viewBox="0 0 20 20" fill="currentColor">
-                   <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
-                 </svg>
-                 Add to cart
-               </div>
+            <button class="add-cart-btn rounded-full w-10 h-10 bg-yellow-400 overflow-hidden p-1 hover:opacity-80 bottom-0 float-right">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mx-auto text-gray-700" viewBox="0 0 20 20" fill="currentColor">
+               <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
+              </svg>
              </button>
-
            </div>
         </a>
-           </form> 
+        </form> 
        </div>
        @endforeach
     </div>
 </div>
 
-<script src="{{ asset('js/image_handler.js') }}"></script>
-   
+@include('layouts.prod_slideshow')
+
+
 @endsection
