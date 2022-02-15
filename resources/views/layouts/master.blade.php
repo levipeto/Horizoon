@@ -33,9 +33,7 @@
 
     {{-- Content --}}
     @yield('content')
-      
-    {{-- Footer --}}
-    @include('layouts.footer')
+
     
 </body>
 </html>

@@ -1,4 +1,4 @@
-<div class="w-full h-full p-4 adaptable:p-0">
+<div class="w-full h-full adaptable:overflow-y-scroll p-4 adaptable:p-0">
           <div class="pt-6 pl-4 adaptable:pl-2">
             <div class="text-gray-800 font-bold text-xl pl-2">My Account</div>
             <div class="mt-4">

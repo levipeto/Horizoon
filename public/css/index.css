@@ -2,7 +2,6 @@ body {
     position: relative;
     margin: 0;
     padding-bottom: 28rem;
-    min-height: 1000px;
 }
 
 body::-webkit-scrollbar {

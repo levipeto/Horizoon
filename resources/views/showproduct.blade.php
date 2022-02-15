@@ -241,4 +241,8 @@
       });
     </script>
 
+    {{-- footer --}}
+    @include('layouts.footer')
+
 @endsection
+

@@ -1,7 +1,5 @@
 <div class="w-1/4 adaptable:w-full p-2 overflow-hidden h-full adaptable:h-auto">
-
-    <ul class="w-full pt-8 pl-1">
-
+  <ul class="w-full pt-8 pl-1">
       <li class="p-2 flex gap-2">
       <div>
        @if(Auth::user()->image == null)

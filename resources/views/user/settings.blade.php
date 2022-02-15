@@ -1,7 +1,6 @@
 @extends('layouts.master')
 
 @section('content')
-
 <div class="w-full h-screen absolute flex adaptable:block adaptable:space-x-0 space-x-2 overflow-hidden 
 adaptable:overflow-auto pt-24 adaptable:pt-36">
 

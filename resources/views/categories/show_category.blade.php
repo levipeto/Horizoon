@@ -99,5 +99,7 @@
 
 @include('layouts.prod_slideshow')
 
+{{-- footer --}}
+@include('layouts.footer')
 
 @endsection
