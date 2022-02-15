@@ -5,44 +5,46 @@
 @section('content')
 
 {{-- Banner --}}
-<div class="relative max-w-6xl mobile:w-full adaptable:w-full mx-auto mt-0 pt-12 adaptable:mt-24 mobile:mt-28 overflow-hidden">
-  <div class="pt-8 pb-80 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48 adaptable:block mobile:block adaptable:pb-4">
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:static">
-      <div class="sm:max-w-lg">
-        <h1 class="text-4xl font font-extrabold tracking-tight text-gray-900 sm:text-6xl">
-          Receive the gift card for various discounts
-        </h1>
-        <p class="mt-4 text-xl text-gray-500">
-          with the gift card your first 10 purchases will be discounted by 10% along with many other news click below for more information
-        </p>
+<div class="relative mx-auto overflow-hidden ada bg-gradient-to-l from-blue-100 to-gray-100">
 
-      </div>
+<div class="mx-auto p-6 mt-32 2xl:w-full lg:w-full xl:max-w-5xl md:w-full sm:w-full
+mobile:block mobile:p-6">
+      <div class="2xl:flex xl:flex lg:flex md:flex sm:block sm:w-full mobile:w-full w-full">
 
-      <div>
-        <div class="mt-10 adaptable:mt-0">
-          <div aria-hidden="true" class="pointer-events-none adaptable:max-w-sm adaptable:h-full adaptable:overflow-hidden adaptable:p-0 adaptable:m-0 lg:absolute lg:inset-y-0 lg:max-w-7xl lg:mx-auto lg:w-full">
-            <div class="absolute adaptable:relative transform sm:left-1/2 sm:top-0 sm:translate-x-8 lg:left-1/2 lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-8">
-              <div>
-                <img class="object-cover object-center"  src="{{URL::to('/')}}/images/hor-giftcard.png">
-              </div>
-            </div>
+        <div class="w-full p-6">
+          <div class="w-full sm:flex-shrink-0 2xl:hidden xl:hidden lg:hidden md:hidden sm:hidden overflow-hidden">
+            <img class="w-full h-96"  src="{{URL::to('/')}}/images/main_grap.png">
           </div>
-          <a href="#" class="inline-block text-center adaptable:mt-8 adaptable:ml-1 adaptable:w-60 mobile:w-full bg-indigo-600 border border-transparent rounded-md py-3 px-8 font-medium text-white hover:bg-indigo-700">Look for more</a>
+         <div class="overflow-hidden">
+          <h1 class="text-5xl font font-extrabold tracking-tight text-gray-900 sm:text-6xl">
+            Receive the gift card for various discounts
+          </h1>
+          <p class="mt-4 text-xl text-gray-500">
+            with the gift card your first 10 purchases will be discounted by 10% along with many other news click below for more information
+          </p>
+         </div>
+          <div class="pt-6">
+            <a href="#" class="inline-block text-center mobile:mx-auto bg-indigo-600 border border-transparent rounded-md py-3 px-8 font-medium text-white hover:bg-indigo-700">Look for more</a>
+          </div>
         </div>
+  
+        <div class="sm:flex-shrink-0 -mt-8 mobile:hidden pl-6">
+           <img class="w-full h-96"  src="{{URL::to('/')}}/images/main_grap.png">
+        </div>
+
       </div>
-    </div>
-  </div>
+</div>
+
 </div>
 
 
 {{-- Trending products --}}
-<div class="prod-container relative max-w-6xl mobile:w-full adaptable:w-full mx-auto adaptable:mt-8  overflow-hidden">
+<div class="prod-container bg-white relative max-w-6xl border-t border-l border-r border-gray-100 mobile:w-full adaptable:w-full mx-auto adaptable:mt-8 rounded-b-sm -mt-6 overflow-hidden">
 
-<div class="font-semibold text-gray-800 text-xl pl-6 border-b border-gray-200 p-4">Trending products</div>
- <div class="w-full grid grid-cols-4 adaptable:grid-cols-3 adaptable:gap-4
-  mobile:grid-cols-2 gap-4
-  adaptable:p-2 grid-flow-row adaptable:max-w-xl 
-  mx-auto mt-2 overflow-hidden box-border">  
+<div class="font-semibold text-gray-800 text-xl pl-6  p-4">Trending products</div>
+ <div class="w-full grid 2xl:grid-cols-4 xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-3 md:p-4 sm:grid-cols-2
+  mobile:grid-cols-2
+  gap-4 grid-flow-row mx-auto mt-2 overflow-hidden box-border">  
 
   @foreach ($products as $product)
       {{-- Products --}}
