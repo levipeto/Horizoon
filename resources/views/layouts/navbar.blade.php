@@ -1,6 +1,5 @@
 <header>
 <div class="overlay hidden h-full w-full fixed z-10 left-0 right-0 overflow-auto" style="background-color:rgba(0,0,0,0.5);"></div>
-
 <nav class="w-full top-0 m-0 p-0 left-0 right-0 fixed z-10 bg-gray-900 shadow-md">
   
   {{-- Dekstop --}}
@@ -47,10 +46,10 @@
     </div>
    </div>
    {{-- Account --}}
-   <div class="flex-1 text-gray-700 text-xl p-1 font-semibold">
-         <div class="flex float-right gap-1 pr-6 justify-center items-center p-1 overflow-hidden">
+   <div class="flex-1 text-gray-700 text-xl p-1 font-semibold overflow-hidden">
+         <div class="flex gap-4 float-right pr-6 justify-center items-center p-1 overflow-hidden">
            {{-- Cart --}}
-          <div class="pr-4 pt-1">
+          <div class="w-8 h-8">
               <button>
                 <a href="{{ route('cart') }}">
                  <div class="flex">
@@ -61,7 +60,7 @@
                     </div>
                     @endauth
                   </div>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-200" viewBox="0 0 20 20" fill="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mt-1 text-gray-200" viewBox="0 0 20 20" fill="currentColor">
                     <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
                   </svg>
                  </div>
@@ -72,7 +71,7 @@
             <div class="menu w-8 h-8 rounded-full">
                  @auth
                  @if(Auth::user()->image == null)
-                  <button class="flex-1 rounded-full w-8 h-8 bg-yellow-400 justify-center items-center
+                  <button class="flex-1 rounded-full w-8 h-8 mt-0.5 bg-yellow-400 justify-center items-center
                   text-gray-800 font-semibold text-2xl">
                    @php
                   $username = Auth::user()->fullname;
@@ -81,7 +80,7 @@
                   {{ $first_letter}}
                   </button>
                   @else
-                      <img class="rounded-full w-8 h-8 justify-center items-center overflow-hidden object-cover cursor-pointer" src="{{ Storage::url(Auth::user()->image) }}">
+                      <img class="rounded-full w-8 h-8 mt-0.5 justify-center items-center overflow-hidden object-cover cursor-pointer" src="{{ Storage::url(Auth::user()->image) }}">
                   @endif
                  @endauth
                  @guest

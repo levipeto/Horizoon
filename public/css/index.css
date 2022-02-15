@@ -23,7 +23,7 @@ body::-webkit-scrollbar {
     display: block;
 }
 
-.cookie-container {
+.js-cookie-consent {
     position: fixed;
     background-color: rgb(255, 200, 50);
     bottom: 0px;
