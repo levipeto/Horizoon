@@ -5,7 +5,7 @@
 @section('content')
 
 {{-- Banner --}}
-<div class="relative mx-auto overflow-hidden bg-gradient-to-l from-blue-100 to-gray-100">
+<div class="relatWWive mx-auto overflow-hidden bg-gradient-to-l from-blue-100 to-gray-100">
 
 <div class="mx-auto p-6 mt-32 2xl:w-full lg:w-full xl:max-w-6xl md:w-full sm:w-full
 mobile:block mobile:p-6">
