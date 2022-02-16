@@ -5,15 +5,15 @@
 @section('content')
 
 {{-- Banner --}}
-<div class="relative mx-auto overflow-hidden ada bg-gradient-to-l from-blue-100 to-gray-100">
+<div class="relative mx-auto overflow-hidden bg-gradient-to-l from-blue-100 to-gray-100">
 
-<div class="mx-auto p-6 mt-32 2xl:w-full lg:w-full xl:max-w-5xl md:w-full sm:w-full
+<div class="mx-auto p-6 mt-32 2xl:w-full lg:w-full xl:max-w-6xl md:w-full sm:w-full
 mobile:block mobile:p-6">
       <div class="2xl:flex xl:flex lg:flex md:flex sm:block sm:w-full mobile:w-full w-full">
 
         <div class="w-full p-6">
           <div class="w-full sm:flex-shrink-0 2xl:hidden xl:hidden lg:hidden md:hidden sm:hidden overflow-hidden">
-            <img class="w-full h-96"  src="{{URL::to('/')}}/images/main_grap.png">
+            <img class="w-full h-full object-cover object-center"  src="{{URL::to('/')}}/images/main_grap.png">
           </div>
          <div class="overflow-hidden">
           <h1 class="text-5xl font font-extrabold tracking-tight text-gray-900 sm:text-6xl">
@@ -23,13 +23,13 @@ mobile:block mobile:p-6">
             with the gift card your first 10 purchases will be discounted by 10% along with many other news click below for more information
           </p>
          </div>
-          <div class="pt-6">
+          <div class="pt-6 w-full">
             <a href="#" class="inline-block text-center mobile:mx-auto bg-indigo-600 border border-transparent rounded-md py-3 px-8 font-medium text-white hover:bg-indigo-700">Look for more</a>
           </div>
         </div>
   
         <div class="sm:flex-shrink-0 -mt-8 mobile:hidden pl-6">
-           <img class="w-full h-96"  src="{{URL::to('/')}}/images/main_grap.png">
+           <img class="w-full h-96 object-cover object-center"  src="{{URL::to('/')}}/images/main_grap.png">
         </div>
 
       </div>

@@ -2,132 +2,138 @@
 <div class="overlay hidden h-full w-full fixed z-10 left-0 right-0 overflow-auto" style="background-color:rgba(0,0,0,0.5);"></div>
 <nav class="w-full top-0 m-0 p-0 left-0 right-0 fixed z-10 bg-gray-900 shadow-md">
   
-  {{-- Dekstop --}}
-<div class="flex w-full relative adaptable:hidden p-1">
-    
-  {{--Searchbar--}}
-  <div class="relative flex-1 pl-2 pt-2.5 justify-center">
-    <div class="relative flex">
-      {{-- search by filter --}}
+{{-- Dekstop --}}
+<div class="w-full relative adaptable:hidden ">
+
+<div class="w-full relative flex items-center overflow-auto justify-between h-16 ">
+
+{{--Logo--}}
+<div class="left-0 -ml-2 overflow-hidden w-1/4">
+    <a href="{{route('home')}}">
+      <img class="object-cover object-center h-52 w-52" src="{{URL::to('/')}}/images/official_logo.png"  alt="Workflow">
+    </a>
+</div>
+
+{{--Searchbar--}}
+<div class="relative justify-center">
+  <div class="relative flex p-1 mx-auto max-w-2xl">
+    {{-- search by filter --}}
+    <div class="flex">
       <select class="w-40 px-2 rounded-l-sm border border-gray-200 bg-white outline-none text-gray-800 text-base overflow-y-scroll"
-       name="search-fitler" id="search-filter">
-        <option class="p-1" value="all">all categories</option>
-        <option class="p-1" value="smartphone">smartphone</option>
-        <option class="p-1" value="computers">computer</option>
-        <option class="p-1" value="accessories">accessories</option>
-        <option class="p-1" value="tv">tv</option>
-        <option class="p-1" value="headphones">headphones</option>
-        <option class="p-1" value="videogames">videogames</option>
-      </select>
-      <input class="search-bar w-full outline-none px-1 py-1 text-center text-gray-700 font-semibold
-      " type="text" id="search">
-      <button type="submit" class="rounded-r-sm px-3 py-1 text-gray-800 text-base hover:opacity-90" style="background-color: rgb(255, 168, 62)">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-        </svg>
-      </button>
-
-      {{--Search-bar items --}}
-      <div class="search-items w-full absolute hidden origin-top-right mt-8
-       shadow-2xl  bg-white ring-1 border border-gray-200
-      ring-black 
-      ring-opacity-5 focus:outline-none" id="search-items">
-     </div>
-
+     name="search-fitler" id="search-filter">
+      <option class="p-1" value="all">all categories</option>
+      <option class="p-1" value="smartphone">smartphone</option>
+      <option class="p-1" value="computers">computer</option>
+      <option class="p-1" value="accessories">accessories</option>
+      <option class="p-1" value="tv">tv</option>
+      <option class="p-1" value="headphones">headphones</option>
+      <option class="p-1" value="videogames">videogames</option>
+    </select>
+    <input class="search-bar w-96 outline-none px-2 py-2 text-center text-gray-700 font-semibold
+    " type="text" id="search">
+    <button type="submit" class="rounded-r-sm px-3 py-1 text-gray-800 text-base hover:opacity-90" style="background-color: rgb(255, 168, 62)">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+      </svg>
+    </button>
     </div>
-  </div>
 
-  {{--Logo--}}
-  <div class="flex-1 overflow-hidden">
-    <div class="font-sans text-3xl text-yellow-400 text-center">
-      <a class="justify-center items-center mt-0" href="{{route('home')}}">
-        <svg xmlns="http://www.w3.org/2000/svg" width="375" viewBox="0 0 375 90" height="55" version="1.0"><defs><clipPath id="a"><path d="M 63 29.570312 L 93 29.570312 L 93 55 L 63 55 Z M 63 29.570312"/></clipPath><clipPath id="b"><path d="M 59.796875 54 L 95.796875 54 L 95.796875 63.320312 L 59.796875 63.320312 Z M 59.796875 54"/></clipPath></defs><g fill="#F8A126"><g><g><path d="M 19.484375 0 L 19.484375 -9.453125 L 10.6875 -9.453125 L 10.6875 0 L 2.671875 0 L 2.671875 -24.90625 L 10.6875 -24.90625 L 10.6875 -15.828125 L 19.484375 -15.828125 L 19.484375 -24.90625 L 27.484375 -24.90625 L 27.484375 0 Z M 19.484375 0" transform="translate(96 56.314)"/></g></g></g><g fill="#F8A126"><g><g><path d="M 15.0625 -25.34375 C 19.351562 -25.34375 22.671875 -24.242188 25.015625 -22.046875 C 27.359375 -19.847656 28.53125 -16.648438 28.53125 -12.453125 C 28.53125 -8.253906 27.359375 -5.054688 25.015625 -2.859375 C 22.671875 -0.660156 19.351562 0.4375 15.0625 0.4375 C 10.757812 0.4375 7.441406 -0.65625 5.109375 -2.84375 C 2.785156 -5.03125 1.625 -8.234375 1.625 -12.453125 C 1.625 -16.679688 2.785156 -19.882812 5.109375 -22.0625 C 7.441406 -24.25 10.757812 -25.34375 15.0625 -25.34375 Z M 15.0625 -19.375 C 13.34375 -19.375 12.035156 -18.851562 11.140625 -17.8125 C 10.253906 -16.769531 9.8125 -15.367188 9.8125 -13.609375 L 9.8125 -11.296875 C 9.8125 -9.535156 10.253906 -8.132812 11.140625 -7.09375 C 12.035156 -6.0625 13.34375 -5.546875 15.0625 -5.546875 C 16.769531 -5.546875 18.078125 -6.0625 18.984375 -7.09375 C 19.890625 -8.132812 20.34375 -9.535156 20.34375 -11.296875 L 20.34375 -13.609375 C 20.34375 -15.367188 19.890625 -16.769531 18.984375 -17.8125 C 18.078125 -18.851562 16.769531 -19.375 15.0625 -19.375 Z M 15.0625 -19.375" transform="translate(126.158 56.314)"/></g></g></g><g fill="#F8A126"><g><g><path d="M 26.3125 -17.265625 C 26.3125 -15.742188 25.898438 -14.367188 25.078125 -13.140625 C 24.265625 -11.910156 23.070312 -11.003906 21.5 -10.421875 L 27.046875 0 L 18.0625 0 L 13.65625 -9.09375 L 10.6875 -9.09375 L 10.6875 0 L 2.671875 0 L 2.671875 -24.90625 L 17.921875 -24.90625 C 19.703125 -24.90625 21.226562 -24.5625 22.5 -23.875 C 23.769531 -23.1875 24.722656 -22.253906 25.359375 -21.078125 C 25.992188 -19.910156 26.3125 -18.640625 26.3125 -17.265625 Z M 18.171875 -16.9375 C 18.171875 -17.59375 17.953125 -18.132812 17.515625 -18.5625 C 17.085938 -19 16.554688 -19.21875 15.921875 -19.21875 L 10.6875 -19.21875 L 10.6875 -14.625 L 15.921875 -14.625 C 16.554688 -14.625 17.085938 -14.847656 17.515625 -15.296875 C 17.953125 -15.742188 18.171875 -16.289062 18.171875 -16.9375 Z M 18.171875 -16.9375" transform="translate(156.316 56.314)"/></g></g></g><g fill="#F8A126"><g><g><path d="M 3.046875 0 L 3.046875 -24.90625 L 11.046875 -24.90625 L 11.046875 0 Z M 3.046875 0" transform="translate(184.482 56.314)"/></g></g></g><g fill="#F8A126"><g><g><path d="M 13.171875 -5.96875 L 25.015625 -5.96875 L 25.015625 0 L 0.875 0 L 0.875 -2.578125 L 12.421875 -18.9375 L 1.734375 -18.9375 L 1.734375 -24.90625 L 24.734375 -24.90625 L 24.734375 -22.34375 Z M 13.171875 -5.96875" transform="translate(198.566 56.314)"/></g></g></g><g fill="#F8A126"><g><g><path d="M 15.0625 -25.34375 C 19.351562 -25.34375 22.671875 -24.242188 25.015625 -22.046875 C 27.359375 -19.847656 28.53125 -16.648438 28.53125 -12.453125 C 28.53125 -8.253906 27.359375 -5.054688 25.015625 -2.859375 C 22.671875 -0.660156 19.351562 0.4375 15.0625 0.4375 C 10.757812 0.4375 7.441406 -0.65625 5.109375 -2.84375 C 2.785156 -5.03125 1.625 -8.234375 1.625 -12.453125 C 1.625 -16.679688 2.785156 -19.882812 5.109375 -22.0625 C 7.441406 -24.25 10.757812 -25.34375 15.0625 -25.34375 Z M 15.0625 -19.375 C 13.34375 -19.375 12.035156 -18.851562 11.140625 -17.8125 C 10.253906 -16.769531 9.8125 -15.367188 9.8125 -13.609375 L 9.8125 -11.296875 C 9.8125 -9.535156 10.253906 -8.132812 11.140625 -7.09375 C 12.035156 -6.0625 13.34375 -5.546875 15.0625 -5.546875 C 16.769531 -5.546875 18.078125 -6.0625 18.984375 -7.09375 C 19.890625 -8.132812 20.34375 -9.535156 20.34375 -11.296875 L 20.34375 -13.609375 C 20.34375 -15.367188 19.890625 -16.769531 18.984375 -17.8125 C 18.078125 -18.851562 16.769531 -19.375 15.0625 -19.375 Z M 15.0625 -19.375" transform="translate(224.705 56.314)"/></g></g></g><g fill="#F8A126"><g><g><path d="M 15.0625 -25.34375 C 19.351562 -25.34375 22.671875 -24.242188 25.015625 -22.046875 C 27.359375 -19.847656 28.53125 -16.648438 28.53125 -12.453125 C 28.53125 -8.253906 27.359375 -5.054688 25.015625 -2.859375 C 22.671875 -0.660156 19.351562 0.4375 15.0625 0.4375 C 10.757812 0.4375 7.441406 -0.65625 5.109375 -2.84375 C 2.785156 -5.03125 1.625 -8.234375 1.625 -12.453125 C 1.625 -16.679688 2.785156 -19.882812 5.109375 -22.0625 C 7.441406 -24.25 10.757812 -25.34375 15.0625 -25.34375 Z M 15.0625 -19.375 C 13.34375 -19.375 12.035156 -18.851562 11.140625 -17.8125 C 10.253906 -16.769531 9.8125 -15.367188 9.8125 -13.609375 L 9.8125 -11.296875 C 9.8125 -9.535156 10.253906 -8.132812 11.140625 -7.09375 C 12.035156 -6.0625 13.34375 -5.546875 15.0625 -5.546875 C 16.769531 -5.546875 18.078125 -6.0625 18.984375 -7.09375 C 19.890625 -8.132812 20.34375 -9.535156 20.34375 -11.296875 L 20.34375 -13.609375 C 20.34375 -15.367188 19.890625 -16.769531 18.984375 -17.8125 C 18.078125 -18.851562 16.769531 -19.375 15.0625 -19.375 Z M 15.0625 -19.375" transform="translate(254.862 56.314)"/></g></g></g><g fill="#F8A126"><g><g><path d="M 20.484375 0 L 10.03125 -12.09375 L 10.03125 0 L 2.671875 0 L 2.671875 -24.90625 L 9.671875 -24.90625 L 20.125 -12.640625 L 20.125 -24.90625 L 27.484375 -24.90625 L 27.484375 0 Z M 20.484375 0" transform="translate(285.02 56.314)"/></g></g></g><g clip-path="url(#a)"><path fill="#F8A126" d="M 88.226562 54.320312 C 90.71875 51.695312 92.246094 48.128906 92.246094 44.199219 C 92.246094 36.121094 85.777344 29.574219 77.796875 29.574219 C 69.816406 29.574219 63.347656 36.121094 63.347656 44.199219 C 63.347656 48.128906 64.878906 51.695312 67.367188 54.320312 L 88.226562 54.320312"/></g><g clip-path="url(#b)"><path fill="#F8A126" d="M 77.796875 63.328125 C 75.214844 63.328125 68.804688 62.886719 68.804688 62.5625 C 68.804688 62.238281 76.917969 62.515625 76.917969 61.914062 C 76.917969 61.308594 66.042969 62.082031 66.042969 61.734375 C 66.042969 61.382812 77.269531 61.347656 77.269531 60.914062 C 77.269531 60.480469 62.808594 60.601562 62.808594 60.234375 C 62.808594 59.871094 74.457031 60.183594 74.457031 59.660156 C 74.457031 59.136719 60.859375 59.554688 60.859375 59.242188 C 60.859375 58.929688 69.984375 59.121094 69.984375 58.597656 C 69.984375 58.078125 59.871094 58.652344 59.871094 58.058594 C 59.871094 57.46875 77.40625 57.675781 77.40625 57.1875 C 77.40625 56.699219 61.066406 57.050781 61.066406 56.542969 C 61.066406 56.039062 71.308594 56.039062 71.308594 55.570312 C 71.308594 55.097656 63.429688 55.238281 63.429688 54.75 C 63.429688 54.261719 63.789062 54.320312 63.789062 54.320312 L 91.808594 54.320312 C 91.808594 54.320312 92.164062 54.261719 92.164062 54.75 C 92.164062 55.238281 84.285156 55.097656 84.285156 55.570312 C 84.285156 56.039062 94.339844 55.648438 94.339844 56.152344 C 94.339844 56.65625 82.6875 56.699219 82.6875 57.1875 C 82.6875 57.675781 95.726562 57.46875 95.726562 58.058594 C 95.726562 58.652344 84.757812 58.078125 84.757812 58.597656 C 84.757812 59.121094 94.023438 58.929688 94.023438 59.242188 C 94.023438 59.554688 81.820312 59.136719 81.820312 59.660156 C 81.820312 60.183594 91.085938 59.871094 91.085938 60.234375 C 91.085938 60.601562 79.96875 60.480469 79.96875 60.914062 C 79.96875 61.347656 87.714844 61.382812 87.714844 61.734375 C 87.714844 62.082031 78.679688 61.308594 78.679688 61.914062 C 78.679688 62.515625 84.367188 62.238281 84.367188 62.5625 C 84.367188 62.886719 80.378906 63.328125 77.796875 63.328125"/></g></svg>
-      </a>
-    </div>
+    {{--Search-bar items --}}
+    <div class="search-items w-full absolute hidden origin-top-right mt-10
+     shadow-2xl bg-white ring-1 border border-gray-200
+    ring-black 
+    ring-opacity-5 focus:outline-none" id="search-items">
    </div>
-   {{-- Account --}}
-   <div class="flex-1 text-gray-700 text-xl p-1 font-semibold overflow-hidden">
-         <div class="flex gap-4 float-right pr-6 justify-center items-center p-1 overflow-hidden">
-           {{-- Cart --}}
-          <div class="w-8 h-8">
-              <button>
-                <a href="{{ route('cart') }}">
-                 <div class="flex">
-                  <div class="block overflow-hidden">
-                    @auth
-                    <div class="text-yellow-400 font-semibold text-base pb-2">
-                      {{Auth::user()->cart->count()}}
-                    </div>
-                    @endauth
+
+  </div>
+</div>
+
+ {{-- Account --}}
+ <div class="ml-auto text-gray-700 text-xl p-1 font-semibold overflow-hidden">
+       <div class="flex gap-4 float-right pr-6 justify-center items-center p-1 overflow-hidden">
+         {{-- Cart --}}
+        <div class="w-8 h-8">
+            <button>
+              <a href="{{ route('cart') }}">
+               <div class="flex">
+                <div class="block overflow-hidden">
+                  @auth
+                  <div class="text-yellow-400 font-semibold text-base pb-2">
+                    {{Auth::user()->cart->count()}}
                   </div>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mt-1 text-gray-200" viewBox="0 0 20 20" fill="currentColor">
-                    <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
+                  @endauth
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mt-1 text-gray-200" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
+                </svg>
+               </div>
+              </a>
+            </button>   
+          </div>
+          {{-- Menu-account --}}
+          <div class="menu w-8 h-8 rounded-full">
+               @auth
+               @if(Auth::user()->image == null)
+                <button class="flex-1 rounded-full w-8 h-8 mt-0.5 bg-yellow-400 justify-center items-center
+                text-gray-800 font-semibold text-2xl">
+                 @php
+                $username = Auth::user()->fullname;
+                $first_letter = substr($username, 0, 1);
+                @endphp
+                {{ $first_letter}}
+                </button>
+                @else
+                    <img class="rounded-full w-8 h-8 mt-0.5 justify-center items-center overflow-hidden object-cover cursor-pointer" src="{{ Storage::url(Auth::user()->image) }}">
+                @endif
+               @endauth
+               @guest
+                  <svg xmlns="http://www.w3.org/2000/svg" class="flex-1 w-6 h-8 justify-center items-center
+                  text-gray-200 font-semibold text-xl cursor-pointer " fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                   </svg>
-                 </div>
-                </a>
-              </button>   
-            </div>
-            {{-- Menu-account --}}
-            <div class="menu w-8 h-8 rounded-full">
-                 @auth
-                 @if(Auth::user()->image == null)
-                  <button class="flex-1 rounded-full w-8 h-8 mt-0.5 bg-yellow-400 justify-center items-center
-                  text-gray-800 font-semibold text-2xl">
-                   @php
-                  $username = Auth::user()->fullname;
-                  $first_letter = substr($username, 0, 1);
-                  @endphp
-                  {{ $first_letter}}
-                  </button>
-                  @else
-                      <img class="rounded-full w-8 h-8 mt-0.5 justify-center items-center overflow-hidden object-cover cursor-pointer" src="{{ Storage::url(Auth::user()->image) }}">
-                  @endif
-                 @endauth
-                 @guest
-                    <svg xmlns="http://www.w3.org/2000/svg" class="flex-1 w-6 h-8 justify-center items-center
-                    text-gray-200 font-semibold text-xl cursor-pointer " fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                    </svg>
-                 @endguest
-            </div>
-         </div>
-        {{-- Item --}}
-        <div class="menu-item hidden origin-top-right absolute right-0 z-10 mr-6 mt-12 w-48 rounded-md shadow-2xl py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
-          <ul>
-          @auth
-          <li class="hover:bg-gray-50">
-            <a href="{{ route('show.fav') }}" class="block px-4 py-2 text-sm text-gray-700 hover:text-yellow-500" role="menuitem" tabindex="-1" id="user-menu-item-0">Favourites</a>
-          </li>
-          <li class="hover:bg-gray-50">
-            <a href="{{ route('profile') }}" class="profile-btn block px-4 py-2 text-sm text-gray-700 hover:text-yellow-500" role="menuitem" tabindex="-1" id="user-menu-item-0">Profile</a>
-          </li>
-         <li>
-          <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:text-yellow-500" role="menuitem" tabindex="-1" id="user-menu-item-0">Setting</a>
-         </li class="hover:bg-gray-50">
-         <li class="hover:bg-gray-50">
-            <form action="{{ route('logout') }}" method="POST">
-              @csrf
-              <button>
-                <a class="block px-4 py-2 text-sm text-gray-700 font-semibold hover:text-yellow-500" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
-              </button>
-            </form>
-         </li>
-         @endauth
-         @guest
-        <li>
-          <a href="{{ route('login') }}" class="block px-4 py-2 text-sm text-gray-700 hover:text-yellow-500" role="menuitem" tabindex="-1" id="user-menu-item-0">Login</a>
-        </li>
-        <li>
-          <a href="{{ route('register') }}" class="block px-4 py-2 text-sm text-gray-700 hover:text-yellow-500" role="menuitem" tabindex="-1" id="user-menu-item-1">Register</a>
-        </li>
-         @endguest
-         </ul>
-        </div>
+               @endguest
+          </div>
        </div>
+      {{-- Item --}}
+      <div class="menu-item hidden origin-top-right absolute right-0 z-10 mr-6 mt-12 w-48 rounded-md shadow-2xl py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+        <ul>
+        @auth
+        <li class="hover:bg-gray-50">
+          <a href="{{ route('show.fav') }}" class="block px-4 py-2 text-sm text-gray-700 hover:text-yellow-500" role="menuitem" tabindex="-1" id="user-menu-item-0">Favourites</a>
+        </li>
+        <li class="hover:bg-gray-50">
+          <a href="{{ route('profile') }}" class="profile-btn block px-4 py-2 text-sm text-gray-700 hover:text-yellow-500" role="menuitem" tabindex="-1" id="user-menu-item-0">Profile</a>
+        </li>
+       <li>
+        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:text-yellow-500" role="menuitem" tabindex="-1" id="user-menu-item-0">Setting</a>
+       </li class="hover:bg-gray-50">
+       <li class="hover:bg-gray-50">
+          <form action="{{ route('logout') }}" method="POST">
+            @csrf
+            <button>
+              <a class="block px-4 py-2 text-sm text-gray-700 font-semibold hover:text-yellow-500" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
+            </button>
+          </form>
+       </li>
+       @endauth
+       @guest
+      <li>
+        <a href="{{ route('login') }}" class="block px-4 py-2 text-sm text-gray-700 hover:text-yellow-500" role="menuitem" tabindex="-1" id="user-menu-item-0">Login</a>
+      </li>
+      <li>
+        <a href="{{ route('register') }}" class="block px-4 py-2 text-sm text-gray-700 hover:text-yellow-500" role="menuitem" tabindex="-1" id="user-menu-item-1">Register</a>
+      </li>
+       @endguest
+       </ul>
+      </div>
+     </div>
   </div>
 
-   {{-- Verical nav --}}
-   <div class="categories adaptable:hidden mobile:hidden bg-gray-900 border-t border-gray-700">
+  
+</div>
+
+{{-- Verical nav --}}
+<div class="categories adaptable:hidden mobile:hidden bg-gray-900 border-t border-gray-700">
         <ul class="flex gap-4 pl-5 p-2 overflow-x-auto">
          {{-- Verical nav btn--}}
          <li>
@@ -229,14 +235,12 @@
   
 {{-- Mobile/other--}}
 <div class="block max-w-7xl relative large:hidden p-0.5">
-  <div class="flex space-x-2 w-full pt-0 justify-center items-center">
+  <div class="flex space-x-2 w-full pt-0 justify-center items-center h-16">
      {{--Logo--}}
-     <div class="w-full overflow-hidden pt-1">
-       <div class="pl-0.5">
-        <a href="{{route('home')}}">
-          <svg xmlns="http://www.w3.org/2000/svg" class="object-cover object-center" width="150" height="60" viewBox="0 0 262.5 112.5"  version="1.0"><defs><clipPath id="a"><path d="M 19 30.859375 L 64 30.859375 L 64 68 L 19 68 Z M 19 30.859375"/></clipPath><clipPath id="b"><path d="M 14 67 L 68.515625 67 L 68.515625 80.980469 L 14 80.980469 Z M 14 67"/></clipPath></defs><g clip-path="url(#a)"><path fill="#F8A126" d="M 57.03125 67.617188 C 60.808594 63.714844 63.132812 58.421875 63.132812 52.585938 C 63.132812 40.589844 53.316406 30.867188 41.210938 30.867188 C 29.105469 30.867188 19.292969 40.589844 19.292969 52.585938 C 19.292969 58.421875 21.613281 63.714844 25.390625 67.617188 L 57.03125 67.617188"/></g><g clip-path="url(#b)"><path fill="#F8A126" d="M 41.210938 80.996094 C 37.292969 80.996094 27.570312 80.339844 27.570312 79.859375 C 27.570312 79.375 39.875 79.789062 39.875 78.890625 C 39.875 77.996094 23.375 79.144531 23.375 78.625 C 23.375 78.109375 40.40625 78.058594 40.40625 77.410156 C 40.40625 76.765625 18.46875 76.945312 18.46875 76.402344 C 18.46875 75.859375 36.144531 76.324219 36.144531 75.546875 C 36.144531 74.773438 15.511719 75.394531 15.511719 74.929688 C 15.511719 74.460938 29.359375 74.746094 29.359375 73.972656 C 29.359375 73.195312 14.015625 74.050781 14.015625 73.167969 C 14.015625 72.289062 40.617188 72.601562 40.617188 71.875 C 40.617188 71.152344 15.824219 71.671875 15.824219 70.921875 C 15.824219 70.171875 31.367188 70.171875 31.367188 69.472656 C 31.367188 68.773438 19.417969 68.980469 19.417969 68.257812 C 19.417969 67.53125 19.957031 67.617188 19.957031 67.617188 L 62.464844 67.617188 C 62.464844 67.617188 63.003906 67.53125 63.003906 68.257812 C 63.003906 68.980469 51.054688 68.773438 51.054688 69.472656 C 51.054688 70.171875 66.308594 69.589844 66.308594 70.339844 C 66.308594 71.089844 48.628906 71.152344 48.628906 71.875 C 48.628906 72.601562 68.40625 72.289062 68.40625 73.167969 C 68.40625 74.050781 51.769531 73.195312 51.769531 73.972656 C 51.769531 74.746094 65.824219 74.460938 65.824219 74.929688 C 65.824219 75.394531 47.3125 74.773438 47.3125 75.546875 C 47.3125 76.324219 61.371094 75.859375 61.371094 76.402344 C 61.371094 76.945312 44.503906 76.765625 44.503906 77.410156 C 44.503906 78.058594 56.257812 78.109375 56.257812 78.625 C 56.257812 79.144531 42.546875 77.996094 42.546875 78.890625 C 42.546875 79.789062 51.175781 79.375 51.175781 79.859375 C 51.175781 80.339844 45.128906 80.996094 41.210938 80.996094"/></g><g fill="#F8A126"><g><g><path d="M 16.09375 0 L 16.09375 -7.8125 L 8.828125 -7.8125 L 8.828125 0 L 2.21875 0 L 2.21875 -20.59375 L 8.828125 -20.59375 L 8.828125 -13.078125 L 16.09375 -13.078125 L 16.09375 -20.59375 L 22.703125 -20.59375 L 22.703125 0 Z M 16.09375 0" transform="translate(69.777 65.833)"/></g></g></g><g fill="#F8A126"><g><g><path d="M 12.453125 -20.9375 C 16.003906 -20.9375 18.742188 -20.03125 20.671875 -18.21875 C 22.609375 -16.40625 23.578125 -13.765625 23.578125 -10.296875 C 23.578125 -6.828125 22.609375 -4.179688 20.671875 -2.359375 C 18.742188 -0.546875 16.003906 0.359375 12.453125 0.359375 C 8.898438 0.359375 6.160156 -0.539062 4.234375 -2.34375 C 2.304688 -4.15625 1.34375 -6.804688 1.34375 -10.296875 C 1.34375 -13.785156 2.304688 -16.429688 4.234375 -18.234375 C 6.160156 -20.035156 8.898438 -20.9375 12.453125 -20.9375 Z M 12.453125 -16.015625 C 11.035156 -16.015625 9.957031 -15.582031 9.21875 -14.71875 C 8.476562 -13.863281 8.109375 -12.707031 8.109375 -11.25 L 8.109375 -9.328125 C 8.109375 -7.878906 8.476562 -6.722656 9.21875 -5.859375 C 9.957031 -5.003906 11.035156 -4.578125 12.453125 -4.578125 C 13.867188 -4.578125 14.945312 -5.003906 15.6875 -5.859375 C 16.4375 -6.722656 16.8125 -7.878906 16.8125 -9.328125 L 16.8125 -11.25 C 16.8125 -12.707031 16.4375 -13.863281 15.6875 -14.71875 C 14.945312 -15.582031 13.867188 -16.015625 12.453125 -16.015625 Z M 12.453125 -16.015625" transform="translate(94.704 65.833)"/></g></g></g><g fill="#F8A126"><g><g><path d="M 21.75 -14.265625 C 21.75 -13.015625 21.410156 -11.878906 20.734375 -10.859375 C 20.054688 -9.835938 19.070312 -9.09375 17.78125 -8.625 L 22.34375 0 L 14.9375 0 L 11.28125 -7.515625 L 8.828125 -7.515625 L 8.828125 0 L 2.21875 0 L 2.21875 -20.59375 L 14.8125 -20.59375 C 16.289062 -20.59375 17.550781 -20.304688 18.59375 -19.734375 C 19.644531 -19.160156 20.429688 -18.390625 20.953125 -17.421875 C 21.484375 -16.460938 21.75 -15.410156 21.75 -14.265625 Z M 15.015625 -14 C 15.015625 -14.539062 14.832031 -14.988281 14.46875 -15.34375 C 14.113281 -15.707031 13.679688 -15.890625 13.171875 -15.890625 L 8.828125 -15.890625 L 8.828125 -12.09375 L 13.171875 -12.09375 C 13.679688 -12.09375 14.113281 -12.273438 14.46875 -12.640625 C 14.832031 -13.015625 15.015625 -13.46875 15.015625 -14 Z M 15.015625 -14" transform="translate(119.63 65.833)"/></g></g></g><g fill="#F8A126"><g><g><path d="M 2.515625 0 L 2.515625 -20.59375 L 9.125 -20.59375 L 9.125 0 Z M 2.515625 0" transform="translate(142.911 65.833)"/></g></g></g><g fill="#F8A126"><g><g><path d="M 10.890625 -4.9375 L 20.671875 -4.9375 L 20.671875 0 L 0.71875 0 L 0.71875 -2.125 L 10.265625 -15.65625 L 1.4375 -15.65625 L 1.4375 -20.59375 L 20.4375 -20.59375 L 20.4375 -18.46875 Z M 10.890625 -4.9375" transform="translate(154.552 65.833)"/></g></g></g><g fill="#F8A126"><g><g><path d="M 12.453125 -20.9375 C 16.003906 -20.9375 18.742188 -20.03125 20.671875 -18.21875 C 22.609375 -16.40625 23.578125 -13.765625 23.578125 -10.296875 C 23.578125 -6.828125 22.609375 -4.179688 20.671875 -2.359375 C 18.742188 -0.546875 16.003906 0.359375 12.453125 0.359375 C 8.898438 0.359375 6.160156 -0.539062 4.234375 -2.34375 C 2.304688 -4.15625 1.34375 -6.804688 1.34375 -10.296875 C 1.34375 -13.785156 2.304688 -16.429688 4.234375 -18.234375 C 6.160156 -20.035156 8.898438 -20.9375 12.453125 -20.9375 Z M 12.453125 -16.015625 C 11.035156 -16.015625 9.957031 -15.582031 9.21875 -14.71875 C 8.476562 -13.863281 8.109375 -12.707031 8.109375 -11.25 L 8.109375 -9.328125 C 8.109375 -7.878906 8.476562 -6.722656 9.21875 -5.859375 C 9.957031 -5.003906 11.035156 -4.578125 12.453125 -4.578125 C 13.867188 -4.578125 14.945312 -5.003906 15.6875 -5.859375 C 16.4375 -6.722656 16.8125 -7.878906 16.8125 -9.328125 L 16.8125 -11.25 C 16.8125 -12.707031 16.4375 -13.863281 15.6875 -14.71875 C 14.945312 -15.582031 13.867188 -16.015625 12.453125 -16.015625 Z M 12.453125 -16.015625" transform="translate(176.157 65.833)"/></g></g></g><g fill="#F8A126"><g><g><path d="M 12.453125 -20.9375 C 16.003906 -20.9375 18.742188 -20.03125 20.671875 -18.21875 C 22.609375 -16.40625 23.578125 -13.765625 23.578125 -10.296875 C 23.578125 -6.828125 22.609375 -4.179688 20.671875 -2.359375 C 18.742188 -0.546875 16.003906 0.359375 12.453125 0.359375 C 8.898438 0.359375 6.160156 -0.539062 4.234375 -2.34375 C 2.304688 -4.15625 1.34375 -6.804688 1.34375 -10.296875 C 1.34375 -13.785156 2.304688 -16.429688 4.234375 -18.234375 C 6.160156 -20.035156 8.898438 -20.9375 12.453125 -20.9375 Z M 12.453125 -16.015625 C 11.035156 -16.015625 9.957031 -15.582031 9.21875 -14.71875 C 8.476562 -13.863281 8.109375 -12.707031 8.109375 -11.25 L 8.109375 -9.328125 C 8.109375 -7.878906 8.476562 -6.722656 9.21875 -5.859375 C 9.957031 -5.003906 11.035156 -4.578125 12.453125 -4.578125 C 13.867188 -4.578125 14.945312 -5.003906 15.6875 -5.859375 C 16.4375 -6.722656 16.8125 -7.878906 16.8125 -9.328125 L 16.8125 -11.25 C 16.8125 -12.707031 16.4375 -13.863281 15.6875 -14.71875 C 14.945312 -15.582031 13.867188 -16.015625 12.453125 -16.015625 Z M 12.453125 -16.015625" transform="translate(201.084 65.833)"/></g></g></g><g fill="#F8A126"><g><g><path d="M 16.9375 0 L 8.28125 -10 L 8.28125 0 L 2.21875 0 L 2.21875 -20.59375 L 7.984375 -20.59375 L 16.640625 -10.4375 L 16.640625 -20.59375 L 22.703125 -20.59375 L 22.703125 0 Z M 16.9375 0" transform="translate(226.01 65.833)"/></g></g></g></svg>
-        </a>
-       </div>
+     <div class="w-full overflow-hidden -ml-5">
+      <a href="{{route('home')}}">
+        <img class="object-cover object-center h-52 w-52" src="{{URL::to('/')}}/images/official_logo.png">
+      </a>
      </div>
 
      <div class="overflow-hidden pr-4 pt-2.5">
