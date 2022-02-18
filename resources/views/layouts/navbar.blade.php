@@ -1,3 +1,11 @@
+
+@php
+/**
+ * Get function from App\Helpers\AppHelper
+ * * */
+$categories = AppHelper::getCategories();
+@endphp
+
 <header>
 <div class="overlay hidden h-full w-full fixed z-10 left-0 right-0 overflow-auto" style="background-color:rgba(0,0,0,0.5);"></div>
 <nav class="w-full top-0 m-0 p-0 left-0 right-0 fixed z-10 bg-gray-900 shadow-md">
@@ -24,12 +32,9 @@
       <select class="w-40 px-2 rounded-l-sm border border-gray-200 bg-white outline-none text-gray-800 text-base overflow-y-scroll"
      name="search-fitler" id="search-filter">
       <option class="p-1" value="all">all categories</option>
-      <option class="p-1" value="smartphone">smartphone</option>
-      <option class="p-1" value="computers">computer</option>
-      <option class="p-1" value="accessories">accessories</option>
-      <option class="p-1" value="tv">tv</option>
-      <option class="p-1" value="headphones">headphones</option>
-      <option class="p-1" value="videogames">videogames</option>
+      @foreach ($categories as $category)
+      <option class="p-1" value="{{$category}}">{{$category}}</option>
+      @endforeach
     </select>
     <input class="search-bar w-96 outline-none px-2 py-2 text-center text-gray-700 font-semibold
     " type="text" id="search">
@@ -145,24 +150,11 @@
     </li>
     
     {{-- Categories --}}
+    @foreach ($categories as $category)
     <li class="text-gray-100 font-semibold text-sm hover:text-yellow-400">
-      <a href="{{ route('categories', 'smartphone') }}">Smartphone</a>
+      <a href="{{ route('categories', $category) }}">{{$category}}</a>
     </li>
-    <li class="text-gray-100 font-semibold text-sm hover:text-yellow-400">
-      <a href="{{ route('categories', 'videogames') }}">Video games</a>
-    </li>
-    <li class="text-gray-100 font-semibold text-sm hover:text-yellow-400">
-      <a href="{{ route('categories', 'computers') }}">Computers</a>
-    </li>
-    <li class="text-gray-100 font-semibold text-sm hover:text-yellow-400">
-      <a href="{{ route('categories', 'accessories') }}">Accessories</a>
-    </li>
-    <li class="text-gray-100 font-semibold text-sm hover:text-yellow-400">
-      <a href="{{ route('categories', 'tv') }}">Tv</a>
-    </li>
-    <li class="text-gray-100 font-semibold text-sm hover:text-yellow-400">
-      <a href="{{ route('categories', 'headphones') }}">HeadPhones</a>
-    </li>
+    @endforeach
 
     {{-- Options --}}
     <div class="flex pl-4 gap-4 border-l border-gray-700">
@@ -311,25 +303,11 @@
   <div class="categories 2xl:hidden xl:hidden bg-gray-900 border-t border-gray-700">
     <ul class="flex gap-4 pl-2 overflow-x-scroll p-1.5" id="sidebar">
       {{-- Categories --}}
+      @foreach ($categories as $category)
       <li class="text-gray-100 font-semibold text-sm hover:text-yellow-400 p-0.5">
-        <a href="{{ route('categories', 'smartphone') }}">Smartphone</a>
+        <a href="{{ route('categories', $category) }}">{{$category}}</a>
       </li>
-      <li class="text-gray-100 font-semibold text-sm hover:text-yellow-400 p-0.5">
-        <a href="{{ route('categories', 'videogames') }}">VideoGames</a>
-      </li>
-      <li class="text-gray-100 font-semibold text-sm hover:text-yellow-400 p-0.5">
-        <a href="{{ route('categories', 'computers') }}">Computers</a>
-      </li>
-      <li class="text-gray-100 font-semibold text-sm hover:text-yellow-400 p-0.5">
-        <a href="{{ route('categories', 'accessories') }}">Accessories</a>
-      </li>
-      <li class="text-gray-100 font-semibold text-sm hover:text-yellow-400 p-0.5">
-        <a href="{{ route('categories', 'tv') }}">Tv</a>
-      </li>
-      <li class="text-gray-100 font-semibold text-sm hover:text-yellow-400 p-0.5">
-        <a href="{{ route('categories', 'headphones') }}">HeadPhones</a>
-      </li>
-
+      @endforeach
     </ul>
    </div>
 
@@ -375,24 +353,11 @@ transform -translate-x-full transition duration-300 ease-in-out" style="width: 3
      <li class="text-gray-900 text-xl font-bold p-2">
         Categories
      </li>
+    @foreach ($categories as $category)
      <li class="text-gray-800 font-semibold text-base hover:bg-gray-200 p-2 cursor-pointer">
-       <a href="{{ route('categories', 'smartphone') }}">Smartphone</a>
+       <a href="{{ route('categories', $category) }}">{{$category}}</a>
      </li>
-     <li class="text-gray-800 font-semibold text-base hover:bg-gray-200 p-2">
-       <a href="{{ route('categories', 'videogames') }}">Video games</a>
-     </li>
-     <li class="text-gray-800 font-semibold text-base hover:bg-gray-200 p-2">
-       <a href="{{ route('categories', 'computers') }}">Computers</a>
-     </li>
-     <li class="text-gray-800 font-semibold text-base hover:bg-gray-200 p-2">
-       <a href="{{ route('categories', 'accessories') }}">Accessories</a>
-     </li>
-     <li class="text-gray-800 font-semibold text-base hover:bg-gray-200 p-2">
-       <a href="{{ route('categories', 'tv') }}">Tv</a>
-     </li>
-     <li class="text-gray-800 font-semibold text-base hover:bg-gray-200 p-2">
-       <a href="{{ route('categories', 'headphones') }}">HeadPhones</a>
-     </li>
+    @endforeach
      <hr>
      {{-- Services --}}
      <li class="text-gray-900 text-xl font-bold p-2">
@@ -502,29 +467,13 @@ transform -translate-x-full transition duration-300 ease-in-out" style="width: 3
      <li class="text-gray-900 text-xl font-bold p-2">
         Categories
      </li>
+     @foreach ($categories as $category)
      <li class="text-gray-600 font-medium text-base hover:bg-gray-200 p-2">
-       <a href="{{ route('categories', 'smartphone') }}">Smartphone</a>
+       <a href="{{ route('categories', $category) }}">{{$category}}</a>
      </li>
-     <li class="text-gray-600 font-medium text-base hover:bg-gray-200 p-2">
-       <a href="{{ route('categories', 'videogames') }}">Video games</a>
-     </li>
-     <li class="text-gray-600 font-medium text-base hover:bg-gray-200 p-2">
-       <a href="{{ route('categories', 'computers') }}">Computers</a>
-     </li>
-     <li class="text-gray-600 font-medium text-base hover:bg-gray-200 p-2">
-       <a href="{{ route('categories', 'accessories') }}">Accessories</a>
-     </li>
-     <li class="text-gray-600 font-medium text-base hover:bg-gray-200 p-2">
-       <a href="{{ route('categories', 'tv') }}">Tv</a>
-     </li>
-     <li class="text-gray-600 font-medium text-base hover:bg-gray-200 p-2">
-       <a href="{{ route('categories', 'headphones') }}">HeadPhones</a>
-     </li>
+     @endforeach
      <hr>
-     {{-- Services --}}
-     <li class="text-gray-900 text-xl font-bold p-2">
-       Services
-     </li>
+     {{-- Profile --}}
      <li class="text-gray-600 font-medium text-base hover:bg-gray-200 p-2">
       <a href="{{ route('show.fav')}}">
         Favourites
@@ -551,7 +500,6 @@ transform -translate-x-full transition duration-300 ease-in-out" style="width: 3
        </a>
      </li>
      <hr>
-     {{-- Account --}}
      <li class="text-gray-900 text-xl font-bold p-2">
        Account
      </li>
@@ -584,7 +532,7 @@ transform -translate-x-full transition duration-300 ease-in-out" style="width: 3
        </a>
      </li>
      <li class="text-gray-600 font-semibold text-base hover:bg-gray-200 p-2">
-       <a class="text-gray-600 font-semibold text-base" href="">
+       <a class="text-gray-600 font-semibold text-base" href="#">
        Support
        </a>
      </li>

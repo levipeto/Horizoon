@@ -118,22 +118,22 @@ Route::group(['middleware' => 'verified'],function(){
  * Admin panel
  */
 Route::group(['middleware'=>['admin','auth']],function(){
+
+    // Get action
     Route::get('/admin/panel', [AdminController::class,'index'])->name('admin.panel');
-    Route::get('/admin/panel/add-product',[ProductsController::class,'addProduct'])->name('add_products');
-    Route::post('/admin/panel/add-product/store',[ProductsController::class,'store'])->name('store-product');
+    Route::get('/admin/panel/add-product',[AdminController::class,'index'])->name('add.product');
     Route::get('/admin/panel/update-product/{id}',[ProductsController::class,'updateProduct'])->name('update.product');
-    Route::patch('/admin/panel/update-product/{id}',[ProductsController::class,'update'])->name('edit.product');
+    Route::get('/admin/panel/subscribes',[AdminController::class,'index'])->name('subscribes');
+    Route::get('/admin/panel/orders',[AdminController::class,'index'])->name('orders');
+
+    // Post action
+    Route::post('/admin/panel/add-product/store',[ProductsController::class,'store'])->name('store-product');
     Route::post('/admin/panel/delete/{id}',[ProductsController::class,'delete'])->name('delete.product');
-
-    //Subscribes
-    Route::get('/admin/panel/subscribes',[AdminController::class,'Subscribes'])->name('subscribes');
-
-    //Orders
-    Route::get('/admin/panel/orders',[AdminController::class,'Orders'])->name('orders');
-
-    // Images handling
     Route::post('/delete-image/{id}',[ProductsController::class,'deleteImage'])->name('delete.image');
     Route::post('/clear-images/{id}',[ProductsController::class,'deleteImage'])->name('clear.images');
+
+    // Patch action
+    Route::patch('/admin/panel/update-product/{id}',[ProductsController::class,'update'])->name('edit.product');
 });
 
 // show products

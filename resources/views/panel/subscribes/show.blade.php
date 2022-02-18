@@ -1,16 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
- @include('panel.layouts.head')
-<body>
 
+<div class="w-full overflow-hidden pb-12">
 
-  <div class="flex w-full overflow-hidden adaptable:block">
-
-    @include('panel.layouts.navbar')
-
-    <div class="float-right w-full h-screen adaptable:w-full bg-gray-100 overflow-y-scroll">
-          
-        <div class="max-w-5xl adaptable:max-w-2xl mx-auto bg-white rounded-sm mt-12 p-2 overflow-hidden">
+        <div class="max-w-5xl adaptable:w-full mx-auto bg-white rounded-sm mt-12 p-2 overflow-y-scroll">
             <div class="font-semibold text-gray-800 text-2xl p-4">Subscribes</div>
             <div class="flex flex-col pr-4">
               <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -119,13 +110,6 @@
               </div>
             </div>
         </div>
-
-    </div>
-
   </div>
 
-  <script src="{{ asset('js/admin/panel.js') }}"></script>
-
  
-</body>
-</html>

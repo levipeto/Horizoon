@@ -11,10 +11,10 @@ menu_panel_btn.addEventListener("click", function (e) {
     document.body.style.overflow = "hidden";
 });
 
-window.addEventListener('click',function(e){
-    if(e.target.classList.contains('overlay')){
-      overlay.classList.add("hidden");
-      menu_items.classList.add("-translate-x-full");
-      document.body.style.overflow = "auto";
+window.addEventListener("click", function (e) {
+    if (e.target.classList.contains("overlay")) {
+        overlay.classList.add("hidden");
+        menu_items.classList.add("-translate-x-full");
+        document.body.style.overflow = "auto";
     }
 });

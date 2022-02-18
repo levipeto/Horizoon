@@ -1,23 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-@include('panel.layouts.head')
-<style>
-.success-msg {
-    transition: opacity 0.5s ease-out;
-    opacity: 1;
-}
-.success-msg.active {
-    opacity: 0;
-    display: block;
-}
-</style>
-<body>
-
-  <div class="flex w-full overflow-hidden adaptable:block">
-
-    @include('panel.layouts.navbar')
-
-    <div class="float-right w-full h-screen adaptable:w-full bg-gray-100 overflow-y-scroll">
+<div class="w-full pb-12 overflow-hidden">
 
     {{-- Show success message --}}
     @if (Session::has('success'))
@@ -120,9 +101,3 @@
     <script src="{{ asset('js/uploadimages.js') }}"></script>
   
     </div>
-
-  </div>
-
- 
-</body>
-</html>

@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    @include('panel.layouts.head')
-</head>
-<body>
 
+<div class="w-full pb-12 overflow-hidden">
 
-  <div class="flex w-full overflow-hidden adaptable:block">
-
-    @include('panel.layouts.navbar')
 
     <div class="float-right w-full h-screen adaptable:w-full bg-gray-100 overflow-y-scroll">
           
@@ -102,9 +94,3 @@
     </div>
 
   </div>
-
-  <script src="{{ asset('js/admin/panel.js') }}"></script>
-
- 
-</body>
-</html>

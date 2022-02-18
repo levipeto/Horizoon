@@ -60,11 +60,6 @@ class ProductsController extends Controller
         return view('categories.show_category',compact('products','name','fav_list'));
     }
 
-    /* Show add products section */
-    public function addProduct(){
-        return view('panel.products.add');
-    }
-
     /**
      * Store a newly created resource in storage.
      *

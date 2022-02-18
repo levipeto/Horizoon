@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use App\Models\Product;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -36,13 +37,6 @@ class AdminController extends Controller
         $capital = round(array_sum($prices));
         return view('panel.index', compact('users','orders','capital','products'));
     }
-
-    // Show all subscribes
-    public function Subscribes(){
-        $users = User::all();
-        return view('panel.subscribes.show',compact('users'));
-    }
-
     // Show all orders
     public function Orders(){
         $orders = Order::all();
