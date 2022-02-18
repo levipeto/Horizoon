@@ -2,10 +2,8 @@
 
 @section('content')
   
-
 <div class="w-full h-screen overflow-hidden">
 
-//Now will work fine
 
   <div class="w-full flex bg-gray-900 h-16 adaptable:hidden">
        {{-- Account --}}

@@ -7,7 +7,7 @@ use App\Models\Product;
 class AppHelper{
     
     //Get all categories from products:db
-    public function getCategories(){
+    public static function getCategories(){
         $categories = Product::select('category')->get();
         $cat_list = [];
         foreach ($categories as $category) {
