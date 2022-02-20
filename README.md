@@ -1,13 +1,21 @@
-<!-- ![Alt text](./public/images/horizoon-logo.svg) -->
-<!-- <p style="overflow: hidden">
- <img src="./public/images/horizoon-logo.svg" width="150" height="150">
-</p> -->
+<!-- ![Alt text](./public/images/official_logo.png) -->
 
-<h1>Horizoon</h1>
-<h4>
+<p style="text-align: center; height: 100px;
+padding:10px;
+bacground: orange;
+overflow:hidden;">
+ <img src="./public/images/official_logo.png"
+ style="object-fit:cover;
+ width:100%; height:80px;">
+</p>
+
+<div style="margin-top: 15px">
+
+<h3
+style="font-weight: 600">
 E-commerce template developed in Laravel. I laid the groundwork... you perfect it.
-What do you find inside?</h4>
-<ul>
+What do you find inside?</h3>
+<ul style="font-size:18px; margin-left:-20px;">
     <li>
         <a>Frontend</a>
     </li>
@@ -36,5 +44,4 @@ What do you find inside?</h4>
     </li>
 </ul>
 
-
-
+</div>
