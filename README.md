@@ -6,7 +6,7 @@ bacground: orange;
 overflow:hidden;">
  <img src="./public/images/official_logo.png"
  style="object-fit:cover;
- width:100%; height:100%">
+ width:100%; height:80px;">
 </p>
 
 <div style="margin-top: 15px">
