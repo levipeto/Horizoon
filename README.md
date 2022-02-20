@@ -1,15 +1,16 @@
 <!-- ![Alt text](./public/images/official_logo.png) -->
 
-<p style="text-align: center; height: 200px;
-padding:2px;
-bacground: orange;
+<p style="text-align: center; height: 80px;
+width: 100%;
+padding: 0px;
 overflow:hidden;">
  <img src="./public/images/official_logo.png"
  style="object-fit:cover;
- width:100%;">
+ width:100%;
+ padding:0;">
 </p>
 
-<div style="margin-top: 15px">
+<div style="margin-top: 20px">
 
 <h3
 style="font-weight: 600;">
