@@ -1,6 +1,6 @@
 <!-- ![Alt text](./public/images/official_logo.png) -->
 
-<p style="text-align: center; width:30%;
+<p style="width:100%;
 height:100px;
 overflow:hidden;">
  <img src="./public/images/official_logo.png"
