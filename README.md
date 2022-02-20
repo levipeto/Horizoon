@@ -1,13 +1,14 @@
 <!-- ![Alt text](./public/images/official_logo.png) -->
 
 <p style="text-align: center; 
-width: 100%;
-height: auto;
-max-width: 400px;">
+width: 300px;
+height: 80px;
+max-width: 400px;
+overflow:hidden;">
  <img src="./public/images/official_logo.png"
  style="object-fit:cover;
  width:100%;
- max-height: 100px;">
+ height: 100%;">
 </p>
 
 <div style="margin-top: 20px">
