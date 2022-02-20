@@ -1,11 +1,9 @@
 <!-- ![Alt text](./public/images/official_logo.png) -->
 
 <p style="text-align: center; 
-height: 120px;
 width: 100%;
-background-color:red;
-padding: 0px;
-overflow:hidden;">
+height: auto;
+max-width: 400px;">
  <img src="./public/images/official_logo.png"
  style="object-fit:cover;
  width:100%;
