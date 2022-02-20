@@ -1,12 +1,12 @@
 <!-- ![Alt text](./public/images/official_logo.png) -->
 
-<p style="text-align: center; height: 100px;
-padding:10px;
+<p style="text-align: center; height: 200px;
+padding:2px;
 bacground: orange;
 overflow:hidden;">
  <img src="./public/images/official_logo.png"
  style="object-fit:cover;
- width:100%; height:80px;">
+ width:100%;">
 </p>
 
 <div style="margin-top: 15px">
