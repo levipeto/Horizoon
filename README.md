@@ -1,7 +1,7 @@
 <!-- ![Alt text](./public/images/official_logo.png) -->
 
 <p style="text-align: center; height: 100px;
-padding:40px;
+padding:10px;
 bacground: orange;
 overflow:hidden;">
  <img src="./public/images/official_logo.png"
