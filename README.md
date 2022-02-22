@@ -1,6 +1,6 @@
 <!-- ![Alt text](./public/images/official_logo.png) -->
 
-<p align="center"><img src="./public/images/official_logo.png" width="400"></p>
+<!-- <p align="center"><img src="./public/images/official_logo.png" width="400"></p> -->
 
 <div style="margin-top: 20px">
 
