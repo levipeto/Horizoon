@@ -68,6 +68,7 @@ class ProfileController extends Controller
 
     }
 
+    // Add profile image
     public function imageUpload(Request $request){
 
       $id = Auth::user()->id;

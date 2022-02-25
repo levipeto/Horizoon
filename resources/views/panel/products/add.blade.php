@@ -48,6 +48,8 @@
               Category
             </dt>
             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+              {{-- All categories....
+              manually add as many as you want  --}}
               <select class="w-60 rounded-sm outline-none" name="product-category">
                 <option value="smartphone">smartphone</option>
                 <option value="headphones">headphones</option>
@@ -100,4 +102,4 @@
   
     <script src="{{ asset('js/uploadimages.js') }}"></script>
   
-    </div>
+  </div>
