@@ -83,6 +83,13 @@ class ProfileController extends Controller
       return redirect()->back();
     }
 
+    public function deleteImageProfile(){
+      $user = User::findOrFail(Auth::user()->id);
+      $user->image = null;
+      $user->update();
+      return redirect()->back();
+    }
+
     public function updatePassword(Request $request){
         $id = Auth::user()->id;
         $user = User::findOrFail($id);

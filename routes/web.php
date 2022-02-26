@@ -88,6 +88,7 @@ Route::group(['middleware' => 'verified'],function(){
     Route::patch('/profile/update/store',[ProfileController::class, 'updateData'])->name('account.update.data');
     Route::patch('/profile/update/store-password',[ProfileController::class, 'updatePassword'])->name('account.update.password');
     Route::patch('/profile/update/store-image',[ProfileController::class, 'imageUpload'])->name('account.update.image');
+    Route::patch('/profile/update/delete-image',[ProfileController::class, 'deleteImageProfile'])->name('account.delete.image');
 
     //Favourites products
     Route::get('/favourites',[ProfileController::class,'showFavoritesProd'])->name('show.fav');
