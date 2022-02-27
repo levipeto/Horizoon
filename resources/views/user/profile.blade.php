@@ -1,4 +1,4 @@
-<div class="w-full h-full adaptable:overflow-y-scroll p-4 adaptable:p-0">
+<div class="w-full h-full overflow-auto p-4 adaptable:p-0">
           <div class="pt-6 pl-4 adaptable:pl-2">
             <div class="text-gray-800 font-bold text-xl pl-2">My Account</div>
             <div class="mt-4">
@@ -9,21 +9,14 @@
                   <form class="flex w-full adaptable:block" action="{{route('account.update.image')}}" method="POST" enctype="multipart/form-data">
                    @csrf
                    @method('PATCH')
-                   <div class="flex space-x-2 adaptable:space-x-0 adaptable:max-w-2xl  gap-1">
+                   <div class="flex space-x-2 adaptable:space-x-0 adaptable:max-w-2xl gap-1">
                       @if(Auth::user()->image == null)
-                        <button class="flex-1 rounded-full w-20 h-20 bg-yellow-400 justify-center items-center
-                        text-gray-800 font-semibold text-2xl">
-                        @php
-                        $username = Auth::user()->fullname;
-                        $first_letter = substr($username, 0, 1);
-                        @endphp
-                        {{ $first_letter}}
-                        </button>
+                        <img class="profile-image-btn rounded-full adaptable:mx-auto adaptable:h-24 adaptable:w-24 w-36 h-36 justify-center items-center overflow-hidden object-cover cursor-pointer" id="preview-img" src="{{URL::to('/')}}/images/avatar.png">
                       @else
                         <img class="profile-image-btn rounded-full adaptable:mx-auto adaptable:h-24 adaptable:w-24 w-36 h-36 justify-center items-center overflow-hidden object-cover cursor-pointer" id="preview-img" src="{{ Storage::url(Auth::user()->image) }}">
                       @endif
                     </div>
-                    <div class="block space-y-2 pl-4  adaptable:mt-4">
+                    <div class="block space-y-2 pl-4 adaptable:mt-4">
                         <div class="text-base font-semibold text-gray-800">Upload your photo</div>
                         <div class="text-sm font-semibold text-gray-600">let the world know who you are through an image</div>
                         <div class="flex space-x-2 w-full ml-auto adaptable:pr-6 adaptable:w-40"> 
@@ -41,7 +34,19 @@
                          </div>
                         </div>
                     </div>
-                  </form>     
+                  </form> 
+                  {{-- Delete image --}}
+                  @if(Auth::user()->image != null)
+                  <form action="{{route('account.delete.image')}}" method="POST">
+                    @csrf
+                   @method('PATCH')
+                    <button class="rounded-full p-1.5 cursor-pointer bg-red-500 w-10 h-10 shadow-md text-white overflow-hidden hover:opacity-90">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 object-cover object-center" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                      </svg>
+                    </button> 
+                  </form>
+                  @endauth
                  </li>
 
                 {{-- Name --}}
@@ -169,34 +174,16 @@
           </div>
 
           {{-- Profile image viewer --}}
+          @if (!Auth::user()->image == null)
           <div class="profile-image-container w-full h-screen hidden">
-           <div class="h-full w-full overlay fixed z-10 left-0 right-0 bottom-0 overflow-auto" style="background-color:rgba(0, 0, 0, 0.644);">
-            <div class="max-w-6xl adaptable:w-80 adaptable:h-80 adaptable:mt-52 adaptable:rounded-sm bottom-0 z-10 mx-auto mt-8 overflow-hidden">
-              <img class="w-full h-full object-cover" src="{{ Storage::url(Auth::user()->image) }}">
+            <div class="h-full w-full overlay fixed z-10 left-0 right-0 bottom-0 overflow-auto" style="background-color:rgba(0, 0, 0, 0.644);">
+             <div class="max-w-6xl adaptable:w-80 adaptable:h-80 adaptable:mt-52 adaptable:rounded-sm bottom-0 z-10 mx-auto mt-8 overflow-hidden">
+               <img class="w-full h-full object-cover" id="show-img" src="{{ Storage::url(Auth::user()->image) }}">
+             </div>
             </div>
            </div>
-          </div>
+          @endif
 
           <script src="{{ asset('js/profile.js') }}"></script>
-
-          <script>
-            // Show reviews modal
-            const show_img_btn = document.querySelector('.profile-image-btn');
-            const show_img = document.querySelector('.profile-image-container');
-      
-            show_img_btn.addEventListener('click',function(e){
-              e.preventDefault();
-              show_img.classList.remove('hidden');
-              document.body.style.overflow = 'hidden';
-            });
-      
-            window.addEventListener('click',function(e){
-              if(e.target.classList.contains('overlay')){
-                show_img.classList.add('hidden');
-                document.body.style.overflow = "auto";
-              }
-            });
-
-          </script>
       
 </div>   
